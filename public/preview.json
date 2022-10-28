@@ -1,0 +1,9 @@
+{
+    "preview" : [
+        {"id":1, "context":"서면 맛집"},
+        {"id":2, "context":"오늘의 일기"},
+        {"id":3, "context":"팝송 추천"},
+        {"id":3, "context":"패딩 추천"}
+
+        ]
+}
