@@ -4,36 +4,45 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import GusetComp from './pages/GuestComp';
-import Home from './pages/Home';
+import GuestComp from './pages/GuestComp';
 import Layout from './pages/Layouts';
-import PostList from './pages/PostList';
 import WriteComp from './pages/WriteComp';
-
+// 전역 사용할 데이터컨텍스트 
+import Home from './pages/Home';
+import Login from './pages/Login';
+import PostDetail from './components/PostDetail';
+import { DataProvider } from './Context/DataContext';
+import MypageComp from './pages/MypageComp';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 
 function App() {
 
   return (
+  <DataProvider>
+
     <div className="App">
-      
+    <Header />
       <Routes>
+          <Route path='/' element={<Layout />}>
 
-        <Route path='/' element={<Layout />}>
-          <Route path='/' element={<Home />}>
-            <Route path=':id' element={<PostList />} />
+            <Route path='/'  element={<Home />}> 
+              <Route path=':id' element={<PostDetail />} />
+            </Route>
+            <Route path='login' element={<Login />} />
+            <Route path='mypage' element={<MypageComp />} />
+            <Route path='write' element={<WriteComp />} />
+            <Route path='guest' element={<GuestComp />} />
+
           </Route>
-          <Route path='write' element={<WriteComp />} />
-          <Route path='guest' element={<GusetComp />} />
-        </Route>
-
       </Routes>
-
-        <div className="footer">
-          <h3> <span style={{color:'yellow'}}>고정|</span>푸터</h3>
-        </div>
+    
+    <Footer />
     </div>
+    
+    </DataProvider>
   );
 }
 

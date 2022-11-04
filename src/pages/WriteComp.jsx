@@ -9,7 +9,7 @@ const WriteComp = () => {
     return ( 
         <div>
             <h2>포스트 작성</h2>
-            <textarea cols="30" rows="10">
+            <textarea cols="60" rows="30">
             </textarea>
             <br />
             <button> 저장 </button>

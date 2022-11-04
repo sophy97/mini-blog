@@ -1,23 +1,15 @@
-import { useState } from "react";
+// 게스트 방명록 댓글 입력받는 공간
+// > 그냥 로그인 무관하게 입력 > 출력함
+
 import '../App.css';
 
-const GusetComp = () => {
-    const [guest, setGuest] = useState("");
+const GuestComp = () => {
+    
     return ( 
         <div>
-            <h2>방명록 작성하셈</h2>
-            <div className="guest-box">
-            👤게스트가 적은 글들 <br />
-            🎃게스트 2 <br />
-            👀게스트 3 <br />
-            <p>{guest}</p>
-            </div>
-            <textarea cols="30" rows="10"></textarea> <br />
-            <button onClick={(e)=>{
-                setGuest(e.target.value);
-            }} className="guest-btn">✅</button>
+            게스트, 왔으면 한마디 하고가는 공간임
         </div>
     );
 }
 
-export default GusetComp;
+export default GuestComp;
