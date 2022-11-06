@@ -31,7 +31,7 @@ function NavComp () {
 
   // 컴포넌트가 마운트되자마자 로그인정보 확인! (useEffect)
   useEffect(()=>{
-    console.log(state.user.name);
+    // console.log(state.user.name); 확인용
     setLogin( data.state.user.name ? true : false )
   }, [data.state.user.name])  //새로 로그인했을 때 화면 바뀌도록
 
