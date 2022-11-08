@@ -14,21 +14,27 @@ const DataProvider = ({children})=> {
     // children으로 사용할 값들을 useState hook 통해 들고온다
     //1 유저 정보
     //로그인해서 계속 사용되어야 할 유저정보
-    const [user, setUser] = useState( { name:"sophy", profile:null, follower:1000 });
+    const [user, setUser] = useState( { name:"sophy", profile:null, follower:350 });
 
     //2 해당 유저의 포스팅 정보
     //포스팅리스트에 출력될 정보, 그 안에는 객체 형태로 [ { } ]
     const [postlist, setPostlist] = useState ([
         {
             postId : 1,
-            postTitle : '첫 포스팅',
-            postContext : '내용1',
+            postTitle : '블로그 첫글',
+            postContext : '내용1영역',
             like : 0,
         },
         {
             postId : 2,
-            postTitle : '전포 카페거리 다녀오다',
-            postContext : '내용2',
+            postTitle : '전포 카페거리',
+            postContext : '내용2영역',
+            like : 0,
+        },
+        {
+            postId : 3,
+            postTitle : '테스트용 세번째내용',
+            postContext : '내용3',
             like : 0,
         }
     ]);
@@ -46,12 +52,6 @@ const DataProvider = ({children})=> {
             postId : 1,
             name : "냥냥이",
             text : "ㅋㅋㅋㅋㅋ"
-        },
-        {
-            commentId : 3,
-            postId : 1,
-            name : "뀨",
-            text : "오~~ 댓글 달고갑니다"
         }
     ]);
     // useState사용하지 않은 변수는 리액트 update를 일으키지 않음

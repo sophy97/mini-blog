@@ -29,7 +29,7 @@ function Rating(props) {
     let reviewnote = ""; 
     switch (score) {
         case 1 : 
-        return reviewnote = "최악이예요! "
+        return reviewnote = "😒 최악이예요 "
         case 2 : 
         return reviewnote = "별로"
         case 3 : 
@@ -37,7 +37,7 @@ function Rating(props) {
         case 4 : 
         return reviewnote = "꽤 좋아요"
         case 5 : 
-        return reviewnote = "매우 좋아요! "
+        return reviewnote = "😍 매우 좋아요! "
     }
   };
 
@@ -46,22 +46,23 @@ function Rating(props) {
   return (
 
     <Wrap>
-    <p> {sendReview() }</p>
       <Stars>
         {ARRAY.map((el, idx) => {
           return (
             <FaStar
               key={idx}
-              size="50"
+              size="45"
               onClick={() => handleStarClick(el)}
               className={clicked[el] && 'yellowStar'}
-            />
-          );
+              />
+            );
         })}
       </Stars>
       <br></br>
+      <p> {sendReview() }</p>
+      <br></br>
       <button type='submit' onClick={()=>{
-        alert("감사합니다");
+        alert("의견 감사합니다!");
         {props.setModal(!props.modal)}
         }}>제출</button>
     </Wrap>

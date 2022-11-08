@@ -10,10 +10,6 @@ const Header = () => {
     
     return (
         <div>
-<<<<<<< HEAD
-            
-=======
->>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
             <div className="header">
             <h5 style={{}}
             onClick={()=>{
@@ -22,14 +18,11 @@ const Header = () => {
 {
     modal ? <Modal modal={modal} setModal={setModal} /> : null
 } 
-<<<<<<< HEAD
-            <p>header: 사진넣기</p>
-            </div>
-=======
+            <p>header:사진넣어꾸미기</p>
             </div>
         </div>
         );
-}
+    }
 
 // 헤더 default 내보내기
 export default Header;
@@ -43,26 +36,7 @@ const Modal = (props) => {
     return ( 
         <div className="feedback-modal">
             <Rating modal={props.modal} setModal={props.setModal} />
->>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
         </div>
         );
 }
-<<<<<<< HEAD
 
-// 헤더 default 내보내기
-export default Header;
-
-
-
-// modal 컴포넌트 :피드백 받기위한 모달창
-// (여기서 쓸거니까 당연 export안함)
-const Modal = (props) => {
-    
-    return ( 
-        <div className="feedback-modal">
-            <Rating modal={props.modal} setModal={props.setModal} />
-        </div>
-    );
-}
-=======
->>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270

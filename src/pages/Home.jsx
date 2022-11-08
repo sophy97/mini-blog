@@ -19,7 +19,7 @@ export const Home = () => {
         return (
             <div className='postlist'>
                 <h5>{post.postTitle}
-                <span onClick={()=>action.setPostlist(post.like+1)}>🖤{"  "}{post.like}</span>
+                <span>🖤{"  "}{post.like}</span>
                 </h5>
                 <p>📜발행일: {date.getMonth()+1}/{date.getDate()}</p>
                 
@@ -28,12 +28,12 @@ export const Home = () => {
                 //배열or객체 수정하려면 카피뜨고,배열에서 내가 원하는 항목만 삭제
                 let copy = [...state.postlist];
                   //splice (n번째, m개)
-                action.setPostlist(copy.splice(1,1));
+                action.setPostlist(copy.splice(1));
                 }}> 삭제 </button>
             </div>
             )
         }
-    )
+    );
 
     //리턴
     return ( 
