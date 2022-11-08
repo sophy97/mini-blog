@@ -18,28 +18,19 @@ const DataProvider = ({children})=> {
 
     //2 해당 유저의 포스팅 정보
     //포스팅리스트에 출력될 정보, 그 안에는 객체 형태로 [ { } ]
-    const [postInfo, setPostInfo] = useState ([
+    const [postlist, setPostlist] = useState ([
         {
             postId : 1,
             postTitle : '첫 포스팅',
-            postPic : ["프로필.jpg"],
+            postContext : '내용1',
             like : 0,
-            modal : false
         },
         {
             postId : 2,
             postTitle : '전포 카페거리 다녀오다',
-            postPic : ["프로필.jpg"],
+            postContext : '내용2',
             like : 0,
-            modal : false
-        },
-        {
-            postId : 3,
-            postTitle : '주간 공부계획',
-            postPic : ["프로필.jpg"],
-            like : 0,
-            modal : false
-        },
+        }
     ]);
 
     //3 댓글 정보
@@ -47,19 +38,19 @@ const DataProvider = ({children})=> {
         {
             commentId : 1,
             postId : 1,
-            name : "도라에몽",
+            name : "팡팡이",
             text : "잘 보고 갑니다"
         },
         {
             commentId : 2,
             postId : 1,
-            name : "노진구",
+            name : "냥냥이",
             text : "ㅋㅋㅋㅋㅋ"
         },
         {
             commentId : 3,
             postId : 1,
-            name : "큐트걸",
+            name : "뀨",
             text : "오~~ 댓글 달고갑니다"
         }
     ]);
@@ -71,12 +62,12 @@ const DataProvider = ({children})=> {
     // 사용할 value값들(위 4개)을 state(초기값)과 action(변경값) 분리해 넣어둔다
     const value = 
     {
-        state: {user, postInfo, allComments, commentCount},
-        action: {setUser, setPostInfo, setAllComments, setCommentCount}
+        state: {user, postlist, allComments, commentCount},
+        action: {setUser, setPostlist, setAllComments, setCommentCount}
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
-    // 이때, {children}은 Provider데이터를 공용으로 쓰는 컴포넌트들 의미
+    // 이때, {children}은 Provider데이터를 공용으로 쓰는 컴포넌트들
     return (
     <DataContext.Provider value={value}>
     {children} 

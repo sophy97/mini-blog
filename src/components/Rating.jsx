@@ -6,9 +6,7 @@ import styled from 'styled-components';
 
 const ARRAY = [0, 1, 2, 3, 4];
 
-function Rating() {
-
-
+function Rating(props) {
 
   const [clicked, setClicked] = useState([false, false, false, false, false]);
 
@@ -27,30 +25,27 @@ function Rating() {
   const sendReview = () => {
     let score = clicked.filter(Boolean).length;
 
-     let reviewnote = ""; 
+    let reviewnote = ""; 
     switch (score) {
         case 1 : 
-        return reviewnote = "1점 매우 나빠요 "
+        return reviewnote = "최악이예요! "
         case 2 : 
-        return reviewnote = "2점 나빠요"
+        return reviewnote = "별로"
         case 3 : 
-        return reviewnote = "3점 그냥그래요"
+        return reviewnote = "그냥 그래요"
         case 4 : 
-        return reviewnote = "4점 좋아요"
+        return reviewnote = "꽤 좋아요"
         case 5 : 
-        return reviewnote = "5점 매우좋아요"
-
-
+        return reviewnote = "매우 좋아요! "
     }
-
-
   };
+
+
 
   return (
 
     <Wrap>
-
-    <p> 별점 {sendReview() }</p>
+    <p> {sendReview() }</p>
       <Stars>
         {ARRAY.map((el, idx) => {
           return (
@@ -63,7 +58,11 @@ function Rating() {
           );
         })}
       </Stars>
-
+      <br></br>
+      <button type='submit' onClick={()=>{
+        alert("감사합니다");
+        {props.setModal(!props.modal)}
+        }}>제출</button>
     </Wrap>
 
   );
@@ -73,9 +72,9 @@ export default Rating;
 
 
 
+
 const Wrap = styled.div`
   padding: 10px;
-
 `;
 
 const RatingText = styled.div`
@@ -85,24 +84,19 @@ color: #787878;
 `;
 
 const Stars = styled.div`
-
- margin: auto;
+  margin: auto;
   padding-top: 5px;
-
   & svg {
     color: gray;
     cursor: pointer;
   }
-
   :hover svg {
-    color: #89CFD3;
+    color: #ffd966;
   }
-
   & svg:hover ~ svg {
     color: gray;
   }
-
   .yellowStar {
-    color: #89CFD3;
+    color: #ffd966;
   }
 `;

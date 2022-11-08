@@ -17,10 +17,10 @@ const Profile = () => {
     const navigate = useNavigate();
     return ( 
         <div className="profile-container">
-            <Card style={{ width: '13rem' }}>
+            <Card style={{ width: '14rem' }}>
                 <Card.Img variant="top" src="../img/profileimg.jpg" />
                 <Card.Body>
-                <Card.Title>{data.state.user.name}</Card.Title>
+                <Card.Title>{state.user.name}</Card.Title>
                 <Card.Text>
                 {state.user.name}의 블로그입니다 <br />
                 #일상 #맛집 #ootd
