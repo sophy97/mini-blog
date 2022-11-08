@@ -10,6 +10,7 @@ const MypageComp = () => {
     const {state, action} = data;
     return ( 
         <div>
+<<<<<<< HEAD
             <br />
             <h3>my page</h3> 
             <Container className="mypage-box">
@@ -33,6 +34,16 @@ const MypageComp = () => {
                     </Col>
                 </Row>
             </Container>
+=======
+            <h2>내 정보</h2>
+            <div className="profile-info"
+            style={{width:'200px', height:'200px', 
+            backgroundColor:'lightyellow', borderRadius:'50%',
+            marginLeft:'90px', marginBottom:'30px'}}>
+            </div>
+                
+            
+>>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
         </div>
     );
 }

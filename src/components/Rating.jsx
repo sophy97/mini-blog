@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Modal } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import styled from 'styled-components';
 
@@ -84,6 +85,10 @@ color: #787878;
 `;
 
 const Stars = styled.div`
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
   margin: auto;
   padding-top: 5px;
   & svg {

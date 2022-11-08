@@ -20,8 +20,13 @@
 
 .header > h5:hover {
   font-weight: bolder;
+<<<<<<< HEAD
   background-color: lightgray;
   color: darkgoldenrod;
+=======
+  background-color: black;
+  color: #b6d7a8;
+>>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
   cursor: pointer;
 }
 
@@ -55,8 +60,13 @@
   width: 300px;
   height: 200px;
   background-color: whitesmoke;
+<<<<<<< HEAD
   border: 2px solid darkgray;
   border-radius: 0.8rem;
+=======
+  border: 2px solid green;
+  border-radius: 0.7rem;
+>>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
 }
 
 .modal-box {
