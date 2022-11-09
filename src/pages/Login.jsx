@@ -10,11 +10,13 @@ import DataContext from '../Context/DataContext';
 
 const Login = () => {
     const [name, setName] = useState("");
-    const {action} = useContext(DataContext);
+    const data = useContext(DataContext);
+    const {state, action} = data;
     const navigate = useNavigate();
 
     const loginUser =()=> {
         action.setUser ( { name:name, profile:null, likelist:[] } );
+        alert("로그인 성공");
         navigate('/');
     }
 

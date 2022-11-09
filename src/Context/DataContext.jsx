@@ -51,7 +51,7 @@ const DataProvider = ({children})=> {
             commentId : 2,
             postId : 1,
             name : "냥냥이",
-            text : "ㅋㅋㅋㅋㅋ"
+            text : "댓글"
         }
     ]);
     // useState사용하지 않은 변수는 리액트 update를 일으키지 않음
@@ -72,7 +72,7 @@ const DataProvider = ({children})=> {
     <DataContext.Provider value={value}>
     {children} 
     </DataContext.Provider>
-        );
+    );
 
 };
 

@@ -38,15 +38,17 @@ function NavComp () {
   // 로그아웃을 위한 이벤트함수
   const logOut = () => {
     setLogin(false); //로그아웃
+    alert("로그아웃하였습니다");
     data.state.action.setUser(null); //user값도 null로
     navigation("/"); //어디서 로그아웃하든 홈으로 이동
+    
   }
 
 
   return (
     <>
     {/* 네브바 전반 디자인(from bootstrap)*/}
-    <Navbar bg="light" variant="light" style={{margin:0, padding:0, backgroundColor:'rgb(218, 235, 183)' }}>
+    <Navbar bg="light" variant="light" style={{margin:0, padding:0}}>
       <Container className='justify-content-end'>
         
         <Nav>
@@ -55,22 +57,16 @@ function NavComp () {
                 end>
                 　Home　　
         </NavLink>        
-        {/* <NavLink to='/login' 
-                style={ ({isActive})=> isActive ? activeStyle : originNav }
-                >
-                　LOGIN　 
-            <FontAwesomeIcon icon={faUser}>　</FontAwesomeIcon>
-        </NavLink> */}
         {/* 로그인/로그아웃 시 출력할 컴포넌트 */}
         <Navbar.Brand>
             <FontAwesomeIcon icon={faUser} />
-          </Navbar.Brand>
+        </Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
             {login ? (
-              <Nav >
+              <Nav>
                 {/**로그인true상태: 출력될 컴포넌트 */}
                 <NavLink className="nav-link" to="/mypage">
-                  반갑습니다,{data.state.user.name}님😀
+                  mypage😀: {data.state.user.name}
                 </NavLink>
                 <Button variant="outline-dark" size='xs' onClick={ logOut }>Logout</Button>{" "}
               </Nav>
@@ -80,16 +76,13 @@ function NavComp () {
                 <Button variant="outline-dark" onClick={()=>{navigation('/login')}}>Login</Button>{" "}
               </div>
             )}
-          </Navbar.Collapse>
-          
-        <NavLink to='/guest' 
+        </Navbar.Collapse>
+        <NavLink to='/games' 
                 style={ ({isActive})=> isActive ? activeStyle : originNav }
                 >
-                　　GUEST　
+                　　놀이터
         </NavLink>     
         </Nav>
-
-        
 
       </Container>
     </Navbar>

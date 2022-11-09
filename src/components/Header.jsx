@@ -18,7 +18,6 @@ const Header = () => {
 {
     modal ? <Modal modal={modal} setModal={setModal} /> : null
 } 
-            <p>header:사진넣어꾸미기</p>
             </div>
         </div>
         );

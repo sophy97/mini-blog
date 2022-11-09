@@ -4,11 +4,11 @@
 
 import { Outlet } from "react-router-dom";
 import Profile from '../components/Profile';
-import Category from '../components/Category';
 import NavComp from "../components/NavComp";
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
+import ThemeComp from "./ThemeComp";
 
 
 
@@ -19,7 +19,7 @@ const Layout = () => {
                 <Container>
                     <Row>
                         <Col> <Profile /> </Col>
-                        <Col> <Category /> </Col>
+                        <Col> <ThemeComp /> </Col>
                     </Row>
                 </Container>    
                 

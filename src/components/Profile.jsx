@@ -28,9 +28,6 @@ const Profile = () => {
                 <Button className='btn-sm' variant="outline-dark"
                 onClick={()=>navigate('/mypage')}
                 >프로필 수정</Button>{' '}
-                <Button className='btn-sm' variant="outline-dark"
-                onClick={()=>navigate('/write')}
-                >글쓰기</Button> <br />
                 </Card.Body>
             </Card>
         </div>

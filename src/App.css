@@ -17,14 +17,12 @@
 .header > h5 {
   display:inline;
 }
-
 .header > h5:hover {
   font-weight: bolder;
   background-color: lightgray;
   color: darkgoldenrod;
   cursor: pointer;
 }
-
 .footer {
   background-color: #696666;
   text-align: center;
@@ -32,23 +30,22 @@
   height: 200px;
 }
 
-.post-list-box, .guest-box {
+.thumb-up {size: 0.5em;}
+.thumb-up:hover {
+  cursor: pointer;
+}
+.post-modal {
+  border: 1px solid #696666;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+.post-list-box {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  margin-left: 50px;
-  margin: 10px 20px;
+  text-align: center;
 }
 .post-list-box span:hover {
   cursor: pointer;
-}
-.postlist {
-  border: 1px solid black;
-  border-radius: 0.5rem;
-}
-.postlist span {
-  float: right;
-  margin-right: 50px;
 }
 
 .feedback-modal {
@@ -75,11 +72,18 @@
   background-color: #999999;
 }
 
-.category-container {
-  width: 45%;
+.themes {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
-.my-cate {
-  background-color: lightblue;
+.themes ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.themes ul li {
+  padding-right: 30px;
+  cursor: pointer;
 }
 
 .delete-btn {
@@ -98,4 +102,28 @@
 .mypage-box {
   background-color: gainsboro;
   border-radius: 0.4rem;
+}
+
+.write {
+  margin: 20px 10px;
+}
+.write input {
+  width: 70%;
+	height: 35px;
+	font-size: 15px;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	background: #eee;
+}
+.write button {
+  padding: 8px 12px;
+  margin-left: 15px;
+  border-radius: 0.3rem;
+}
+.write button:hover {
+  background: #696666;
+  color: white;
+  transition: all 0.5s;
+	transform: scale(1.05);
 }
