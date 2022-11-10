@@ -25,7 +25,7 @@ function App() {
     <Header />
       <Routes>
           <Route path='/' element={<Layout />}>
-            <Route path='/'  element={<Home />}></Route>
+            <Route path='/'  element={<Home />} />
             <Route path='login' element={<Login />} />
             <Route path='mypage' element={<MypageComp />} />
             <Route path='games' element={<GamesComp />} />

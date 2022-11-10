@@ -12,7 +12,7 @@ import DataContext from '../Context/DataContext';
 const Profile = () => {
     // user데이터 불러와서 로그인정보랑 연결해야함...
     const data = useContext(DataContext);
-    const {state, action} = data;
+    const {state} = data;
 
     const navigate = useNavigate();
     return ( 

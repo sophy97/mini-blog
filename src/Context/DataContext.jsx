@@ -17,29 +17,10 @@ const DataProvider = ({children})=> {
     const [user, setUser] = useState( { name:"sophy", profile:null, follower:350 });
 
     //2 해당 유저의 포스팅 정보
-    //포스팅리스트에 출력될 정보, 그 안에는 객체 형태로 [ { } ]
-    const [postlist, setPostlist] = useState ([
-        {
-            postId : 1,
-            postTitle : '블로그 첫글',
-            postContext : '내용1영역',
-            like : 0,
-        },
-        {
-            postId : 2,
-            postTitle : '전포 카페거리',
-            postContext : '내용2영역',
-            like : 0,
-        },
-        {
-            postId : 3,
-            postTitle : '테스트용 세번째내용',
-            postContext : '내용3',
-            like : 0,
-        }
-    ]);
+    //포스팅리스트에 출력될 정보 > 홈에서 다 했음
+    
 
-    //3 댓글 정보
+    //3 댓글 정보 >> 일단보류
     const [allComments, setAllComments] = useState([
         {
             commentId : 1,
@@ -54,16 +35,17 @@ const DataProvider = ({children})=> {
             text : "댓글"
         }
     ]);
+
     // useState사용하지 않은 변수는 리액트 update를 일으키지 않음
     //안먹혀서 이거 쓰겠다.. 이해안됨 >> commentInput가서 카운트값 올려주셈
     //4 댓글 카운트정보
-    const[commentCount ,setCommentCount] = useState(4);
+    const[commentCount ,setCommentCount] = useState(3);
 
     // 사용할 value값들(위 4개)을 state(초기값)과 action(변경값) 분리해 넣어둔다
     const value = 
     {
-        state: {user, postlist, allComments, commentCount},
-        action: {setUser, setPostlist, setAllComments, setCommentCount}
+        state: {user, allComments, commentCount},
+        action: {setUser, setAllComments, setCommentCount}
     };
 
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔

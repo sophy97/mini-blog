@@ -6,14 +6,14 @@
   text-align: center;
   width: 100%;
   height: 100%;
-  background-color: #eeeeee;
+  background-color: rgba(245, 245, 230, 0.725);
 }
 
-.header {
+/* .header {
   background-color: #bebebe;
   width: 100%;
   height: 250px;
-}
+} */
 .header > h5 {
   display:inline;
 }
@@ -23,8 +23,14 @@
   color: darkgoldenrod;
   cursor: pointer;
 }
+.headerIMG {
+  width:100%;
+  height: 250px;
+}
 .footer {
-  background-color: #696666;
+  padding-top: 100px;
+  background-color: black;
+  color:#eee;
   text-align: center;
   width: 100%;
   height: 200px;
@@ -43,6 +49,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  border:1px solid #08180d;
 }
 .post-list-box span:hover {
   cursor: pointer;
@@ -65,11 +72,11 @@
   border: none;
 }
 .modal-btn:hover, .modify-btn:hover{
-  background-color: gainsboro;
+  background-color: #FFF978;
 }
 
 .my-nav {
-  background-color: #999999;
+  background-color: #FFF978;
 }
 
 .themes {
@@ -84,12 +91,6 @@
 .themes ul li {
   padding-right: 30px;
   cursor: pointer;
-}
-
-.delete-btn {
-  border-radius: 10%;
-  background-color: black;
-  color: white;
 }
 
 .post-detail {
@@ -107,14 +108,14 @@
 .write {
   margin: 20px 10px;
 }
-.write input {
-  width: 70%;
-	height: 35px;
-	font-size: 15px;
-	padding: 10px 15px;
-	border-radius: 5px;
-	border: 1px solid grey;
-	background: #eee;
+.title-input {
+  width: 500px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
 }
 .write button {
   padding: 8px 12px;
@@ -126,4 +127,38 @@
   color: white;
   transition: all 0.5s;
 	transform: scale(1.05);
+}
+.delete-btn {
+  display: contents;
+  border: 1px solid black;
+}
+
+.post-detail, .write-btn {
+  display: inline-block;
+  text-align: center;
+  padding:5px;
+  border-radius: 0.5rem;
+}
+
+.post-detail:hover, .write-btn:hover {
+  cursor: pointer;
+  transition: all 0.2s;
+	transform: scale(1.05);
+  background-color: #FAFABE;
+}
+
+.modify-btn1, .modify-btn2  {
+  border-radius: 0.3rem;
+}
+.modify-btn1:hover, .modify-btn2:hover {
+  transform: scale(1.1);
+}
+
+.boxed {
+  position: relative;
+  background-clip: padding-box;
+  border: 2px solid #08180d;
+  padding-bottom: 4px;
+  color: black;
+  border-radius: 0.6rem;
 }
