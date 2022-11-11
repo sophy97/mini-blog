@@ -7,18 +7,24 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import DataContext from '../Context/DataContext';
+import '../App.css';
 
 
 const Profile = () => {
-    // user데이터 불러와서 로그인정보랑 연결해야함...
+    // user데이터 불러와서 로그인정보와 연결
     const data = useContext(DataContext);
     const {state} = data;
 
     const navigate = useNavigate();
     return ( 
         <div className="profile-container">
-            <Card style={{ width: '14rem' }}>
-                <Card.Img variant="top" src="../img/profileimg.jpg" />
+            <Card style={{ width: '15rem' }}>
+                <Card.Img variant="top" src=
+                {
+                    state.user.profile ? (state.user.profile)
+                    :
+                    ("../img/profile.jpg")
+                } />
                 <Card.Body>
                 <Card.Title>{state.user.name}</Card.Title>
                 <Card.Text>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Modal } from 'react-bootstrap';
 import { FaStar } from 'react-icons/fa';
 import styled from 'styled-components';
 
@@ -21,7 +20,7 @@ function Rating(props) {
 
   useEffect(() => {
     sendReview();
-  }, [clicked]); //컨디마 컨디업
+  }, [clicked]); 
 
   const sendReview = () => {
     let score = clicked.filter(Boolean).length;
@@ -29,13 +28,13 @@ function Rating(props) {
     let reviewnote = ""; 
     switch (score) {
         case 1 : 
-        return reviewnote = "😒 최악이예요 "
+        return reviewnote = "🤮 완전 쓰레기같아요"
         case 2 : 
-        return reviewnote = "별로"
+        return reviewnote = " 별로예요 "
         case 3 : 
-        return reviewnote = "그냥 그래요"
+        return reviewnote = " 보통이에요 "
         case 4 : 
-        return reviewnote = "꽤 좋아요"
+        return reviewnote = " 꽤 좋아요 "
         case 5 : 
         return reviewnote = "😍 매우 좋아요! "
     }
@@ -61,35 +60,22 @@ function Rating(props) {
       <br></br>
       <p> {sendReview() }</p>
       <br></br>
-      <button type='submit' onClick={()=>{
-        alert("의견 감사합니다!");
-        {props.setModal(!props.modal)}
-        }}>제출</button>
+      <button className='feedback-submit' 
+        onClick={()=>{ alert("의견 주셔서 감사합니다 ! ");
+                      {props.setModal(!props.modal)}
+                      }}>제출</button>
     </Wrap>
 
   );
 }
-
 export default Rating;
-
 
 
 
 const Wrap = styled.div`
   padding: 10px;
 `;
-
-const RatingText = styled.div`
-color: #787878;
-  font-size: 12px;
-  font-weight: 400;
-`;
-
 const Stars = styled.div`
-<<<<<<< HEAD
-=======
-
->>>>>>> 3fb7e2181d53af958e84563c27b08670dd6a9270
   margin: auto;
   padding-top: 5px;
   & svg {
@@ -104,5 +90,8 @@ const Stars = styled.div`
   }
   .yellowStar {
     color: #ffd966;
+  }
+  .feedback-submit {
+    border: none;
   }
 `;

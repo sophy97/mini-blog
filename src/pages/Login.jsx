@@ -17,7 +17,7 @@ const Login = () => {
     const loginUser =()=> {
         action.setUser ( { name:name, profile:null, likelist:[] } );
         alert("로그인 성공");
-        navigate('/');
+        navigate('/mypage');
     }
 
     return ( 

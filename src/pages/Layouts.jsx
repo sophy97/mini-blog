@@ -8,7 +8,7 @@ import NavComp from "../components/NavComp";
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
-import ThemeComp from "./ThemeComp";
+import MenuComp from "../components/MenuComp";
 
 
 
@@ -19,7 +19,7 @@ const Layout = () => {
                 <Container>
                     <Row>
                         <Col> <Profile /> </Col>
-                        <Col> <ThemeComp /> </Col>
+                        <Col> <MenuComp /> </Col>
                     </Row>
                 </Container>    
                 

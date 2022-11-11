@@ -1,6 +1,7 @@
-// 푸터 영역 & 
-
+// 푸터 영역 
 // 전체를 레이아웃Comp로 전달한다
+
+
 const Footer = () => {
     return ( 
         <div>

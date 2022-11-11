@@ -13,28 +13,27 @@ import MypageComp from './pages/MypageComp';
 import GamesComp from './pages/GamesComp';
 import Footer from './components/Footer';
 import Header from './components/Header';
-
+import Home2 from './pages/Home2';
 
 
 function App() {
 
   return (
   <DataProvider>
-
+  
     <div className="App">
     <Header />
       <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/'  element={<Home />} />
+            <Route path='emolog'  element={<Home2 />} />
             <Route path='login' element={<Login />} />
             <Route path='mypage' element={<MypageComp />} />
             <Route path='games' element={<GamesComp />} />
           </Route>
       </Routes>
-    
     <Footer />
     </div>
-    
     </DataProvider>
   );
 }

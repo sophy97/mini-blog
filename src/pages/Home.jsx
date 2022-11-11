@@ -54,7 +54,7 @@ const Home =()=>{
         setThumbUp(newThumbUp);
     }
 
-// 정확히 이해 안 됨.. 렌더링 무한루프때 쓰라함
+// 정확히 이해 안 됨. 렌더링 무한루프 에러에 쓰라고...
 // useEffect(()=>{
 //  console.log(addTitle);
 // },[])
@@ -62,11 +62,11 @@ const Home =()=>{
 
 return (
     <div className="App">
-
+        <div className='Wrapper-posts'>
     {
         title.map (function(post, idx) {
             return (
-            <div className='post-list-box boxed' key={idx}>
+            <div className='post-list-box' key={idx}>
                 <h5 onClick={()=>{setClickNum(idx)}}>
                 {post}
                 <span className='thumb-up' onClick={ ()=>{ changeThumbUp(idx) } }> 👍 </span> 
@@ -84,10 +84,13 @@ return (
                 }}> 삭제 
                 </button>
                 <h6>📜 발행일: {date.getMonth()+1}/{date.getDate()}</h6>
+                <hr />
             </div>            
                 );
         })
     }
+        </div>
+
     <span onClick={ ()=>{ setPostmodal(!postmodal) } }>
         <h6 className='post-detail'> 📗 상세보기 </h6>
     </span>
@@ -128,7 +131,7 @@ function PostModal (props) {
 // 글쓰기 폼 보여주는 모달
 function WriteModal (props) {
     return (
-    <div className='write'>
+    <div className='writeform'>
         <input onChange={ (e)=>{ props.setInput({...props.input, inputTitle:e.target.value}) } } 
         placeholder="제목" className='title-input' /> <br />
         <input onChange={ (e)=>{ props.setInput({...props.input, inputContent:e.target.value}) } } 

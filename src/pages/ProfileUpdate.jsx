@@ -13,15 +13,13 @@ function ProfileUpdate() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     // 데이터 수정을 위해 액션값 받아옴
-    const {action, state} = useContext(DataContext);
+    const {state, action} = useContext(DataContext);
     const [file, setFile] = useState("");
     const imgShow = useRef();
 
-  //파일 가져오는 함수 (e객체로부터 가져온다) : 가져오기위해 위에 file state생성해두셈
+  //파일 가져오는 함수 (e객체로부터 들고옴) : file state 생성해두기
   const onLoadFile =(e)=> {
     //이벤트객체의 target.files를 통해 원하는 파일 들고올 수 있다
-    // console.log(e.target.files[0]);
-    // console.log(imgShow);
     setFile(e.target.files[0]);
     imgShow.current.style.backgroundSize = "cover";
     imgShow.current.style.backgroundImage = `url(${URL.createObjectURL(e.target.files[0])})`
@@ -39,9 +37,8 @@ function ProfileUpdate() {
 
   return (
     <>
-      <Button variant="outline" onClick={handleShow}
-      style={{border:'1px solid darkgray', float:'left',
-              marginLeft:'125px'}} >
+      <Button variant="outline" size='xs' onClick={handleShow}
+      style={{ border:'1px solid darkgray' }} >
         프로필사진 수정
       </Button>
 
@@ -51,8 +48,9 @@ function ProfileUpdate() {
         </Modal.Header>
         <Modal.Body>
           {/* 추가된 사진 미리보기("objectURL사용:createimageURL") */}
-          <div ref={imgShow} style={{width:'300px', height:'300px', 
-          backgroundColor:'lightgray', borderRadius:'30%'}}></div>
+          <div ref={imgShow} style={{width:'300px', height:'200px', 
+          backgroundColor:'lightgray', borderRadius:'30%'}}>
+          </div>
           {/* 모달 바디 > 사진 파일을 받을 input태그 가져오기 */}
           <Form.Group controlId="formFileSm" className="mb-3">
             <Form.Label>추가할 이미지를 선택하세요</Form.Label>
@@ -64,7 +62,7 @@ function ProfileUpdate() {
           <Button variant="secondary" onClick={handleClose}>
             취소
           </Button>
-          <Button variant="primary" onClick={updateProfile}>
+          <Button variant="dark" onClick={updateProfile}>
             저장
           </Button>
         </Modal.Footer>
