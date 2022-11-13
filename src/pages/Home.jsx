@@ -20,7 +20,7 @@ const Home =()=>{
     let [content, setContent] = useState( [
         '제목3 내용입니다', 
         '제목2 내용입니다', 
-        '제목1 내용입니다'
+        '제목1 내용입니다, 내용 내용 내용 내용 내용'
     ] );
     let [thumbUp, setThumbUp] = useState( [0, 0, 0] );
     let [clickNum, setClickNum] = useState(0);
@@ -50,7 +50,7 @@ const Home =()=>{
     }
     function changeThumbUp(idx) {
         let newThumbUp = [...thumbUp];
-        newThumbUp[idx] = thumbUp[idx] + 1;
+        newThumbUp[idx] = (thumbUp[idx] + 1);
         setThumbUp(newThumbUp);
     }
 
@@ -59,16 +59,17 @@ const Home =()=>{
 //  console.log(addTitle);
 // },[])
 
-
 return (
     <div className="App">
+
+    {/* 포스팅리스트 출력 박스 - map으로 title배열 출력*/}
         <div className='Wrapper-posts'>
-    {
+        {
         title.map (function(post, idx) {
             return (
             <div className='post-list-box' key={idx}>
                 <h5 onClick={()=>{setClickNum(idx)}}>
-                {post}
+                {post} 　
                 <span className='thumb-up' onClick={ ()=>{ changeThumbUp(idx) } }> 👍 </span> 
                 {thumbUp[idx]} 
                 </h5>
@@ -78,36 +79,34 @@ return (
                 let copy = [...title];
                 let copy2 = [...content];
                 copy.splice(idx,1);
-                copy2.splice(idx,1)
+                copy2.splice(idx,1);
                 setTitle(copy);
                 setContent(copy2);
                 }}> 삭제 
                 </button>
+                <span style={{position:'right'}} onClick={ ()=>{ setPostmodal(!postmodal) } }>
+                <h6 className='post-detail'> 📗 상세보기 </h6>
+                </span>
+                {
+                    postmodal === true ? 
+                    <PostModal title={title} content={content} date={date} clickNum={clickNum}/>
+                    : null
+                }
                 <h6>📜 발행일: {date.getMonth()+1}/{date.getDate()}</h6>
                 <hr />
-            </div>            
+            </div>
                 );
-        })
-    }
+        }) }
         </div>
-
-    <span onClick={ ()=>{ setPostmodal(!postmodal) } }>
-        <h6 className='post-detail'> 📗 상세보기 </h6>
-    </span>
-    {
-        postmodal === true ? 
-        <PostModal title={title} content={content} date={date} clickNum={clickNum}/>
-        : null
-    }
-    <span  onClick={ ()=>{ setWritemodal(!writemodal) } }>
+        <span onClick={ ()=>{ setWritemodal(!writemodal) } }>
         <h6 className='write-btn'> 🖋 글쓰기 </h6>
-    </span>
-    {
-        writemodal === true ? 
-        <WriteModal input={input} setInput={setInput} addTitle={addTitle}
-                    clickNum={clickNum} addContent={addContent} />
-        : null
-    }
+        </span>
+        {
+            writemodal === true ? 
+            <WriteModal input={input} setInput={setInput} addTitle={addTitle}
+                        clickNum={clickNum} addContent={addContent} />
+            : null
+        }
 
     </div>
     );
@@ -136,10 +135,12 @@ function WriteModal (props) {
         placeholder="제목" className='title-input' /> <br />
         <input onChange={ (e)=>{ props.setInput({...props.input, inputContent:e.target.value}) } } 
         placeholder="내용을 입력하세요" className='content-input' />
-        <button onClick={ ()=>{ 
+        <br />
+        <button className='addpost-btn' onClick={ ()=>{ 
             props.addTitle(props.inputTitle);
             props.addContent(props.inputContent);
-            }}> 등록 </button>
+            
+            }}> 포스트 등록 </button>
     </div>
     )
 }

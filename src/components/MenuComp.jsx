@@ -21,16 +21,16 @@ const MenuComp = () => {
     return ( 
         <div className='themes'>
             <ul>
-                <li onClick={()=>{navigate('/')}}> 📓LOG </li>
-                <li onClick={()=>{navigate('/emolog')}}> 😣EmotionLog </li>
+                <li onClick={()=>{navigate('/')}}> 📓 Log </li>
+                <li onClick={()=>{navigate('/emolog')}}> 😊 Emotion-Log </li>
                 <li><p className="feedback-btn"
                 onClick={()=>{ setModal(!modal) }}> ⭐FeedBack 
                 </p></li>
                 {
                 modal ? <Modal modal={modal} setModal={setModal} /> : null
                 }
-                {/* onClick={useTheme} 다크모드 나중에 연결할거임 */}
-                <li className="theme-btn">mode</li>
+                {/* onClick={useTheme} 다크모드 나중에 연결할 것 */}
+                <li className="theme-btn">🌜</li>
             </ul>
         </div>
     );

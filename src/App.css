@@ -14,8 +14,8 @@
 }
 .header {
   width:100%;
-  height: 320px;
-  background-image: url("https://lh3.googleusercontent.com/4ufxyj5Wq-0gYfHb75iGH3fNyi35ZLD6aHDekzsdGt0ZoP7XYRldYYxTyea_l2Moft9rFbrqkWd5iIE2mjskzLmBosLhix9lrvcy_rbJOy1NHm6qzwAzFZhPPK22rrw20gGKnZEJKXc_K3INuIalCxC57BmDZqm7Trl1ERHCx48kvmNe52aNpGmDB96EDJG-AXsOENCQlmJrgC760AGryPPGbjDvQo0tag8zW1eAOgnIfylUDO6YkG6uaPqF4VM2e71afcuVg2bJRISWmWFYosFRVjMpSgDKLGL0KCw-PMGSHi_lTn0tZLg5nvfYcpBb6V6orEXu7Om3rK3C5mZDjEQzdaWX9TCidTZ-7Dzqx_drLcBe40YxBepLEcjEiw03cXJ9ADKx3eJ4GbwJE-xU2qHflLkgS_vT8xySIKdGnfy3RAZFdgpfR2gLiLZ3lnJUiTqZSfPbCb5ldFaKQ_3LnyuPtgirIUFk1J5n_PBHRdCX1ZV9t2igntzEqINhZAd39tqwmuV65Y1JdW8GVj1-weP2ROK036YQzaDSPbPAx_xGPsLtg47N6bMtKKUpwFPuLC4HwRzc42VZbB_nwIGz_acV9ruvO7yaPvxX8BQIWI3n_LE_otoNqcfxK_PIsb7Ju4W2CgJVm1sfPAAOUemsdkf3avTxJb4AXqtcpDo1rmQjCkE5HuLVg9La8UGPFtx4xTtxsOacFyT0gAG0xnkKJE5Tgg6gu6QCyzloln2hyC5YQZ83hipDV5VoZj5l2SCujNxAo8_GeoOmR-iWnErEb2R0qY82LtXdrXu74Reqbnhecz7sNZEZQClW166fFc6azo6dE_JQhpsJr4DMa3xlpzyQhNgOHVqARmgdqIFQzrMSnBj6rVw2tNDKFAz6B_Za2zMHn1wlApslGieN4diMuMrmg95DR6Ff4cnnnVAru7Co=w1148-h330-no?authuser=0");
+  height: 420px;
+  background-image: url("http://lh3.googleusercontent.com/OLrbIaU-dZ2LwaplYpSt4y04VdIGJNboPf_pW_pyjKSNghA83i4YMljPCVqbt0_PZQZ-a1nnDh33TGl9ZFbEUKk9CtUAgOI4DKQgG3JIjuIixFXkAgbcKwnDTJ1-cj9cqDwBDbkz85q9H23d7cHCARPbobLKG3-ojnUCN1Fs8RApWYf6nK5pgoR4FIZh6_QjHae49M-V67bmasVOGAHa221xcHfBUGTIl6A8mdZMn84joQ9ZQerhQkzJd5aLSuls6Ew-TlHOzko30KOTwHowVW1aY-SmRwAdumWnLXgu3XNm04AKa3KjQ2MQvz8Kd87Z6qVrpboOj8JUzDcbeDsKol4Aw4zZi7WL2-bbgBGYDEDFHkkJDQn4RH4O69bGEIKehPTQ0OG_6DP3ZEoK40u3OYEnhKjhz-DBhlkzZppT6mM7ez4vBIZNwdwIRz62RjjQyh9d1zG2IFklz4UbDdWJcFxZ_npKtZ99A0s53mR14QV3WANmBI1Sv7LVBg4pWFBki4U-NRFGg6iumxQhEYo6n96yJcTQjrW7ATY0BC-1fDDdXFA06rzX53usZMI6m4jee3TC0sLD_oBFezuEf5Qng__bXPzlUlvsfYmWmDyV664IFe3ncxMaSmMFqo6KgVjcr8SIZgDSWGIU-b2vxUismSx1hyA8O1MSdVbbV4bKb8GRfhnnwm_g3lWlux4xlM0vAg9dkWT69XFWcgHVWGDKql8SBlr53N6M9OS-SnleBzU1GBUwLqmhZfzw3JmeTi_LdpC5sWM8JZA5MFzTGgJ5UpbrU5yL4uCzAvC8vnhJGOSNo7JeX0emmV0gyy8LjzeMnJlexSvNvu8lji6jai-s6tCclBzSqeT0ywE-d5_rDRAxZmOpklPRRc7yf05wFX8wVgNDDTuHUlnSWZyfChWJXQLWnjm1tBcobUvOwVhIFUg9=w1662-h477-no?authuser=0")
 }
 .title {
   color:#eee;
@@ -25,8 +25,7 @@
 }
 
 .footer {
-  border: 1px dotted #696666;
-  background-color:whitesmoke;
+  background-color: #282828;
   text-align: center;
   width: 100%;
   height: 100px;
@@ -71,18 +70,18 @@
   text-align: left;
   border-radius: 0.3rem;
 }
-.modal-btn, .modify-btn{
+.modal-btn{
   border: none;
 }
-.modal-btn:hover, .modify-btn:hover{
-  background-color: #FFF978;
+.modal-btn:hover{
+  background-color: #fffaa4;
 }
 
 
 .themes {
   margin-top: 30px;
-  margin-bottom: 20px;
-  width: 95%;
+  margin-bottom: 30px;
+  width: 80%;
   height: 280px;
   background-image: url("https://lh3.googleusercontent.com/k8epcJOZ6koH3lPNDgeLWY2azKY0pnI8NS0MjKe6PPwtGwgV5Pyct71mCPtC0N0t4WcWk8DzCnfjYHG1IPwWMf7hYfcZhKV8pIU_dLByxVv8oC-sxoD9yOG3hADscixmDE9msW1TyljX6Hp_IFeg52gsP1-G7Ovkxg5Xa5TCi9oifp6_xuGNRM_0Ji_npIcMUD2cnFVDg0nH7lA7dhckjMUVgvvDIxdBjjKxd7_tX_lOyspN7YVE_y2MTpKXHFxFkTHZJq0frO_iZkYxtozHRuel9TduJ_9-NKAjCh2w9Y5OLuJE6aPAkeJm1hKfH_x1REQ8s1U8SbhW6JqcEO2IMuLBa01tMsqN-p47483EVxEpXDLeyi1P3y_6Rv71EyLikVnXePa5_Lg9ZdZLZx_PqmgBUFr7KwBVDU7fOKTu9W7L49ZC-TzW9mP3S4NevtEdKdSAmEF8TzGqRHCzbj89RtP6_T5hZYjW4twbwTA9BtH-Fj8rf1Rdfib1cLUrnnJPMZB-2xtFBmyRkq8PIG_b4JhsUVgmBW57cB0GZF35oDITtKIclm7AAQ9m7HN60jnqtRa0KiMP0-UtLW6-6tVRLGUBS_C3HCqH_L2d1r9bJR-e6SPOd5CUdb_zFiLLQabBiabviXYju1SSl6Pa9t-ux5jHi19wXpVbnI3okAmLwmD2mtEzOITp37Y2XcKAQAzotzglpzMqOt_E8AGzQvNCXyfqXp08AWpgFlmDvWqVX2HxFCgBu6YDGUOnMq2pp-j-mw5eoQmArUvRCAGeJpmLdrJodGDhCm82y76Jk7WBIjGR-9kqsSgYiyZzv6pS5DRIRjZ4Cj15k3RSc9nPw_iOTDw4AcSlytAgqftc1l9c7v88w0RhYdgMHc-N9et7rqWpFuK5jnYw0hC2H9OQLKTzb0Mb4wL4J1GohFLq3WDIGHKQ=s858-no?authuser=0");
 }
@@ -108,7 +107,9 @@
   cursor: pointer;
 }
 .theme-btn:hover {
-  transition: all 0.9s;
+  transition: all 0.8s;
+  background-color: black;
+  border-radius: 80%;
   font-weight: bolder;
   font-size: large;
   cursor: pointer;
@@ -127,32 +128,53 @@
 }
 
 .writeform, .post-modal {
-  border: 1px solid gray;
-  border-radius: 0.5rem;
-
+  border: 2px solid darkgray;
+  border-radius: 8px;
   padding: 50px 80px;
   margin: 50px 20px;
+  overflow-y: scroll;
 }
 .title-input {
   width: 500px;
-  height: 32px;
+  height: 30px;
   font-size: 15px;
   border: 0;
   border-radius: 15px;
   padding-left: 10px;
   background-color: rgb(233, 233, 233);
 }
-.delete-btn {
-  display: contents;
-  border: 1px solid black;
+.content-input {
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 600px;
+  height: 200px;
 }
-.post-detail, .write-btn {
+.addpost-btn{
+  padding: 5px 10px;
+  border: none;
+}
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  float: right;
+}
+.addpost-btn:hover, .delete-btn:hover {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+	transform: scale(1.05);
+  background-color: #FAFABE;
+}
+
+
+.post-detail, .write-btn, .add-emotion {
   display: inline-block;
   text-align: center;
   padding: 5px;
   border-radius: 0.5rem;
 }
-.post-detail:hover, .write-btn:hover {
+.post-detail:hover, .write-btn:hover, .add-emotion:hover {
   cursor: pointer;
   transition: all 0.2s;
 	transform: scale(1.05);
@@ -165,3 +187,11 @@
   transform: scale(1.1);
 }
 
+.emotion-card {
+  margin: 50px 20px;
+  border: 2px solid darkgray;
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 150px;
+}

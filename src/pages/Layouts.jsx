@@ -18,8 +18,12 @@ const Layout = () => {
             <NavComp />
                 <Container>
                     <Row>
-                        <Col> <Profile /> </Col>
-                        <Col> <MenuComp /> </Col>
+                        <Col xs={6} md={4}> 
+                        <Profile /> 
+                        </Col>
+                        <Col xs={12} md={8}>
+                        <MenuComp />
+                        </Col>
                     </Row>
                 </Container>    
                 
