@@ -18,8 +18,8 @@ const Home =()=>{
         '제목1'
     ] );
     let [content, setContent] = useState( [
-        '제목3 내용입니다', 
-        '제목2 내용입니다', 
+        '제목3 내용입니다3333333', 
+        '제목2 내용입니다2222222', 
         '제목1 내용입니다, 내용 내용 내용 내용 내용'
     ] );
     let [thumbUp, setThumbUp] = useState( [0, 0, 0] );
@@ -84,14 +84,6 @@ return (
                 setContent(copy2);
                 }}> 삭제 
                 </button>
-                <span style={{position:'right'}} onClick={ ()=>{ setPostmodal(!postmodal) } }>
-                <h6 className='post-detail'> 📗 상세보기 </h6>
-                </span>
-                {
-                    postmodal === true ? 
-                    <PostModal title={title} content={content} date={date} clickNum={clickNum}/>
-                    : null
-                }
                 <h6>📜 발행일: {date.getMonth()+1}/{date.getDate()}</h6>
                 <hr />
             </div>
@@ -105,6 +97,14 @@ return (
             writemodal === true ? 
             <WriteModal input={input} setInput={setInput} addTitle={addTitle}
                         clickNum={clickNum} addContent={addContent} />
+            : null
+        }
+        <span style={{float:'right', marginBottom:'5px'}} onClick={ ()=>{ setPostmodal(!postmodal) } }>
+        <h6 className='post-detail'> 📗 상세보기 </h6>
+        </span>
+        {
+            postmodal === true ? 
+            <PostModal title={title} content={content} date={date} clickNum={clickNum}/>
             : null
         }
 

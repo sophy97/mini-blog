@@ -18,12 +18,12 @@ const Profile = () => {
     const navigate = useNavigate();
     return ( 
         <div className="profile-container">
-            <Card style={{ width: '15rem' }}>
+            <Card style={{ width: '15rem', fontSize:"font-family: 'Gowun Dodum', sans-serif"}}>
                 <Card.Img variant="top" src=
                 {
                     state.user.profile ? (state.user.profile)
                     :
-                    ("../img/profile.jpg")
+                    ("../img/프사.jpg")
                 } />
                 <Card.Body>
                 <Card.Title>{state.user.name}</Card.Title>
