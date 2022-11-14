@@ -28,7 +28,7 @@ function Rating(props) {
     let reviewnote = ""; 
     switch (score) {
         case 1 : 
-        return reviewnote = "🤮 완전 쓰레기같아요"
+        return reviewnote = "🤮 완전 쓰레기네요"
         case 2 : 
         return reviewnote = " 별로예요 "
         case 3 : 
@@ -36,7 +36,7 @@ function Rating(props) {
         case 4 : 
         return reviewnote = " 꽤 좋아요 "
         case 5 : 
-        return reviewnote = "😍 매우 좋아요! "
+        return reviewnote = "😍 정말 좋아요! "
     }
   };
 
@@ -45,6 +45,7 @@ function Rating(props) {
   return (
 
     <Wrap>
+      <p>이 페이지를 평가해주세요</p>
       <Stars>
         {ARRAY.map((el, idx) => {
           return (
@@ -59,11 +60,10 @@ function Rating(props) {
       </Stars>
       <br></br>
       <p> {sendReview() }</p>
-      <br></br>
-      <button className='feedback-submit' 
+      <span className='feedback-submit' 
         onClick={()=>{ alert("의견 주셔서 감사합니다 ! ");
                       {props.setModal(!props.modal)}
-                      }}>제출</button>
+                }}>제출</span>
     </Wrap>
 
   );
@@ -91,7 +91,8 @@ const Stars = styled.div`
   .yellowStar {
     color: #ffd966;
   }
-  .feedback-submit {
-    border: none;
+  .feedback-submit:hover {
+  cursor: pointer;
+  padding: 2px 4px;
   }
 `;

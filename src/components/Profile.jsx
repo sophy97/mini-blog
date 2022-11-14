@@ -23,13 +23,13 @@ const Profile = () => {
                 {
                     state.user.profile ? (state.user.profile)
                     :
-                    ("../img/프사.jpg")
+                    ("../img/기본프사.jpg")
                 } />
                 <Card.Body>
                 <Card.Title>{state.user.name}</Card.Title>
                 <Card.Text>
                 {state.user.name}의 블로그입니다 <br />
-                #일상 #맛집 #ootd
+                #일상 #맛집 #공부
                 </Card.Text>
                 <Button className='btn-sm' variant="outline-dark"
                 onClick={()=>navigate('/mypage')}
@@ -41,5 +41,3 @@ const Profile = () => {
 }
 
 export default Profile;
-
-

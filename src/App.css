@@ -33,7 +33,10 @@
   color:lavender;
   text-align: center;
   width: 100%;
-  height: 100px;
+  height: 150px;
+}
+.footer-title {
+  font-family: 'Noto Serif KR', serif;
 }
 
 .thumb-up {size: 0.5em;}
@@ -41,9 +44,19 @@
   cursor: pointer;
 }
 .post-modal {
-  border: 1px solid #696666;
-  background-color: white;
-  border-radius: 0.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 80px;
+  background-color: rgb(230, 237, 245);
+  border: 4px solid rgb(171, 182, 194);
+  border-radius: 8px;
+}
+.close-btn:hover {
+  cursor: pointer;
+  border: 1px solid rgb(115, 131, 182);
+  padding: 2px 4px;
 }
 
 .Wrapper-posts, .emotion-card {
@@ -55,20 +68,18 @@
   border: 3px solid rgb(197, 197, 197);
   border-radius: 0.5rem;
 }
-
-.post-list-box span:hover {
+.post-list-box > h5:hover {
   cursor: pointer;
 }
-
 .feedback-modal {
   position: absolute;
-  top: 450px;
+  top: 600px;
   right: 200px;
   width: 300px;
   height: 200px;
-  background-color: whitesmoke;
-  border: 2px solid darkgray;
-  border-radius: 0.8rem;
+  background-color: rgb(245, 243, 237);
+  border: 4px solid wheat;
+  border-radius: 8px;
 }
 
 .modal-box {
@@ -87,8 +98,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   width: 80%;
-  height: 280px;
-  background-image: url("https://lh3.googleusercontent.com/k8epcJOZ6koH3lPNDgeLWY2azKY0pnI8NS0MjKe6PPwtGwgV5Pyct71mCPtC0N0t4WcWk8DzCnfjYHG1IPwWMf7hYfcZhKV8pIU_dLByxVv8oC-sxoD9yOG3hADscixmDE9msW1TyljX6Hp_IFeg52gsP1-G7Ovkxg5Xa5TCi9oifp6_xuGNRM_0Ji_npIcMUD2cnFVDg0nH7lA7dhckjMUVgvvDIxdBjjKxd7_tX_lOyspN7YVE_y2MTpKXHFxFkTHZJq0frO_iZkYxtozHRuel9TduJ_9-NKAjCh2w9Y5OLuJE6aPAkeJm1hKfH_x1REQ8s1U8SbhW6JqcEO2IMuLBa01tMsqN-p47483EVxEpXDLeyi1P3y_6Rv71EyLikVnXePa5_Lg9ZdZLZx_PqmgBUFr7KwBVDU7fOKTu9W7L49ZC-TzW9mP3S4NevtEdKdSAmEF8TzGqRHCzbj89RtP6_T5hZYjW4twbwTA9BtH-Fj8rf1Rdfib1cLUrnnJPMZB-2xtFBmyRkq8PIG_b4JhsUVgmBW57cB0GZF35oDITtKIclm7AAQ9m7HN60jnqtRa0KiMP0-UtLW6-6tVRLGUBS_C3HCqH_L2d1r9bJR-e6SPOd5CUdb_zFiLLQabBiabviXYju1SSl6Pa9t-ux5jHi19wXpVbnI3okAmLwmD2mtEzOITp37Y2XcKAQAzotzglpzMqOt_E8AGzQvNCXyfqXp08AWpgFlmDvWqVX2HxFCgBu6YDGUOnMq2pp-j-mw5eoQmArUvRCAGeJpmLdrJodGDhCm82y76Jk7WBIjGR-9kqsSgYiyZzv6pS5DRIRjZ4Cj15k3RSc9nPw_iOTDw4AcSlytAgqftc1l9c7v88w0RhYdgMHc-N9et7rqWpFuK5jnYw0hC2H9OQLKTzb0Mb4wL4J1GohFLq3WDIGHKQ=s858-no?authuser=0");
+  height: 250px;
 }
 
 .themes ul, .themes li {
@@ -127,17 +137,16 @@
 }
 
 .mypage-box {
-  background-color: #dae1e9;
+  background-color: #DCDCDC;
   border-radius: 0.8rem;
   margin-bottom: 30px;
 }
 
-.writeform, .post-modal {
+.writeform {
   border: 2px solid darkgray;
   border-radius: 8px;
   padding: 50px 80px;
   margin: 50px 20px;
-  overflow-y: scroll;
 }
 .title-input {
   width: 500px;
@@ -192,10 +201,11 @@
 }
 
 .emotion-card {
-  margin: 50px 20px;
+  padding: 50px 20px;
   border: 2px solid darkgray;
   background: #eee;
   border-radius: 8px;
   overflow: hidden;
   height: 150px;
 }
+

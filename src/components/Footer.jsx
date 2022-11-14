@@ -4,8 +4,10 @@
 const Footer = () => {
     return ( 
         <div>
-            <div className="footer"><br /><br /><br />
-                <h6>Copyright 2022. sophy97. All right reserved 🧾</h6>
+            <div className="footer">
+                <br /><br /><br />
+                <h5 className="footer-title">기록하다</h5>
+                <p>&copy; Copyright 2022. sophy97. All right reserved</p>
             </div>
         </div>
     );

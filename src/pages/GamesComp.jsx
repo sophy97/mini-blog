@@ -4,10 +4,11 @@ import Spinner from 'react-bootstrap/Spinner';
 const GamesComp = () => {
     return ( 
         <div>
-            <br />
-            <h4> 미니게임을 즐겨 보세요 !</h4>
-            <br />
-            <h6 style={{display:'inline-block'}}>준비중입니다 　</h6>
+            <br/><br/>
+            <h2>PlayGround</h2>
+            <h6> 미니게임을 즐겨 보세요 !</h6>
+            <br/>
+            <p style={{display:'inline-block'}}>준비중입니다 　</p>
             <Spinner animation="border" size='xl' variant="warning" />
             <br /><br /><br />
         </div>

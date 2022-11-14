@@ -1,5 +1,4 @@
 // 네브바에 출력/관련 내용들
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -19,7 +18,7 @@ function NavComp () {
   // 네브바 꾸미기 
   const originNav = { color:"white", textDecorationLine:"none"}
   const activeStyle = { color:"#C8FFFF", textDecorationLine:"none", 
-                      transition:'all 250ms ease-out', fontWeight:'bolder'} 
+                        transition:'all 250ms ease-out', fontWeight:'bolder'} 
   //네비게이터
   const navigation = useNavigate();
 
