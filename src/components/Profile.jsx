@@ -23,7 +23,7 @@ const Profile = () => {
                 {
                     state.user.profile ? (state.user.profile)
                     :
-                    ("../img/기본프사.jpg")
+                    ("기본프사.jpg")
                 } />
                 <Card.Body>
                 <Card.Title>{state.user.name}</Card.Title>

@@ -63,7 +63,7 @@ return (
     <div className="App">
         <br/><br/>
         <h2>Posts</h2>
-        <p>포스트 제목을 클릭하고 하단의 '상세보기' 버튼을 누르면 해당 포스트 내용이 보입니다!</p>
+        <p>포스트 제목 클릭 후, 하단의 '상세보기' 버튼을 누르면 해당 포스트가 보입니다!</p>
         <br/>
     {/* 포스팅리스트 출력 박스 - map으로 title배열 출력*/}
         <div className='Wrapper-posts'>
@@ -71,7 +71,7 @@ return (
         title.map (function(post, idx) {
             return (
             <div className='post-list-box' key={idx}>
-                <h5 onClick={()=>{setClickNum(idx)}}>
+                <h5 onClick={()=>{setClickNum(idx); }}>
                 {post} 　
                 <span className='thumb-up' onClick={ ()=>{ changeThumbUp(idx) } }> 👍 </span> 
                 {thumbUp[idx]} 
@@ -99,7 +99,7 @@ return (
         {
             writemodal === true ? 
             <WriteModal input={input} setInput={setInput} addTitle={addTitle}
-                        clickNum={clickNum} addContent={addContent} />
+                        clickNum={clickNum} addContent={addContent} setWritemodal={setWritemodal}/>
             : null
         }
         <span style={{float:'top', marginBottom:'15px'}} onClick={ ()=>{ setPostmodal(!postmodal) } }>
@@ -138,13 +138,13 @@ function WriteModal (props) {
     <div className='writeform'>
         <input onChange={ (e)=>{ props.setInput({...props.input, inputTitle:e.target.value}) } } 
         placeholder="제목" className='title-input' /> <br />
-        <input onChange={ (e)=>{ props.setInput({...props.input, inputContent:e.target.value}) } } 
+        <textarea onChange={ (e)=>{ props.setInput({...props.input, inputContent:e.target.value}) } } 
         placeholder="내용을 입력하세요" className='content-input' />
         <br />
+        <span onClick={()=>{props.setWritemodal(!WriteModal)}} className='close-btn' >닫기</span>
         <button className='addpost-btn' onClick={ ()=>{ 
             props.addTitle(props.inputTitle);
             props.addContent(props.inputContent);
-            
             }}> 포스트 등록 </button>
     </div>
     );

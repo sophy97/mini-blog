@@ -17,7 +17,7 @@ function NavComp () {
 
   // 네브바 꾸미기 
   const originNav = { color:"white", textDecorationLine:"none"}
-  const activeStyle = { color:"#C8FFFF", textDecorationLine:"none", 
+  const activeStyle = { color:"#ADA4D5", textDecorationLine:"none", 
                         transition:'all 250ms ease-out', fontWeight:'bolder'} 
   //네비게이터
   const navigation = useNavigate();
@@ -62,12 +62,12 @@ function NavComp () {
                 style={ ({isActive})=> isActive ? activeStyle : originNav } >
                   mypage😀: {data.state.user.name}
                 </NavLink>　
-                <Button variant="outline-light" size='xs' onClick={ logOut }>Logout</Button>{" "}
+                <Button variant="outline-light" style={{padding:'2px'}} onClick={ logOut }>Logout</Button>{" "}
               </Nav>
             ) : (
               <div>
                 {/** 로그인false: 출력될 컴포넌트 */}
-                <Button variant="outline-light" onClick={()=>{navigation('/login')}}>Login</Button>{" "}
+                <Button variant="outline-light" style={{padding:'2px'}} onClick={()=>{navigation('/login')}}>Login</Button>{" "}
               </div>
             )}
         </Navbar.Collapse>

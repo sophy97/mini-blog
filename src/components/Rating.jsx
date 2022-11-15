@@ -45,7 +45,7 @@ function Rating(props) {
   return (
 
     <Wrap>
-      <p>이 페이지를 평가해주세요</p>
+      <p>페이지를 평가해주세요</p>
       <Stars>
         {ARRAY.map((el, idx) => {
           return (
@@ -61,7 +61,7 @@ function Rating(props) {
       <br></br>
       <p> {sendReview() }</p>
       <span className='feedback-submit' 
-        onClick={()=>{ alert("의견 주셔서 감사합니다 ! ");
+        onClick={()=>{ alert("의견 감사합니다 ! ");
                       {props.setModal(!props.modal)}
                 }}>제출</span>
     </Wrap>

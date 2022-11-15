@@ -23,14 +23,14 @@
   left: 80px;
 }
 .header {
+  background-image:url('../public/img/headersize.jpg');
   width:100%;
-  height: 450px;
-  background-image:url("https://lh3.googleusercontent.com/CrgswWv45TlGL9nkpAy8kIKqSYl7fqdvYj5WFuVJqqErSYhaMavf3tr1Ug17-l9IVXjXMKi0ImZvdQPF4OqNvAq8g0olL4g3pDq1WnJum_vWF4-Z9f8ANf9dxvMGAOceQaEWcG4EuMiHybuu5wd-Wb8nmwZaFK_AWjR-y_uObN1mrDi1AIeJz_KgcG55zpkpSw4PVTPVpIgCzFwSYpoHht_HDdquL1R0yDt1RZuHsO4iigN6RgEDCzU8mo5ko3MA17D1nkSyNjrqNJADworDcKdXeoTx2rKIorGlULn8-jONt0N9zomF5yOKg3O3U7cN1_mkpCplQHQK9lCKIBBI_4BEsdsd6nyA92PKaFwb5jMrhZfbJrOp6LfLzbZaisg29UW1zdxk1ujFuZDU3ADAqy3fmUp62iKGOj07Ps0ZULpxr_9gpEyt4WkbLcmUupDi9CeUkM4uYYeaRUQhrX73AHZzA5HjgzKXlqRC5uMksIcWrs3cinMxwkvMkX2kMLlYR1Aecc-aSMX4ul_jqzxggF8UGmiUChWYSPr68SChK5uqAi1Sh3DAfruvAHH0drjg-HYQasE015E6B-Irdm8SGsklv0QuMJkHv3z5iH5HUSJmZz9hW1zHoXbpatETyW5LOovOUCS5wu1V06iT1T8RkL0xmp6yMZDqVinHegPiDzKEt2OLwgdkvzMPgWMF_MgzOkxVylUI-Dw_fr2g2gsORQW7HeYpz83_zarsrzTNOFFrxQK559k_NCbWfhEHqPi8QCgjlD7M6VuO23Ka3YMM4NhFXxCY0M__1mByySnx7wzR-RrdPwgI1hoAvjHoQ8Il_8dpGbM7Tmvdo86amIndXJsuzaXuBTzUFsTLSZcvIgW-RvKJvqBBy3WgoAi0XZVKVvsSmi2wVXELX0vOMWnf9roXY45GvDikCKeWhkwaKz4j=w1889-h543-no?authuser=0")
+  height: 530px;
 }
 
 .footer {
   background-color: #282828;
-  color:lavender;
+  color:rgb(203, 203, 243);
   text-align: center;
   width: 100%;
   height: 150px;
@@ -59,21 +59,34 @@
   padding: 2px 4px;
 }
 
-.Wrapper-posts, .emotion-card {
-  padding-top: 30px;
+.Wrapper-posts {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 20px 50px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  margin: 20px 50px;
   border: 3px solid rgb(197, 197, 197);
   border-radius: 0.5rem;
 }
+.emotion-card {
+  border: 3px solid rgb(197, 197, 197);
+  border-radius: 0.5rem;
+}
+.game-box {
+  border: 3px solid rgb(197, 197, 197);
+  border-radius: 0.5rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .post-list-box > h5:hover {
   cursor: pointer;
 }
 .feedback-modal {
   position: absolute;
-  top: 600px;
+  top: 650px;
   right: 200px;
   width: 300px;
   height: 200px;
@@ -83,7 +96,7 @@
 }
 
 .modal-box {
-  background-color: lightgray;
+  background-color: rgb(231, 231, 231);
   text-align: left;
   border-radius: 0.3rem;
 }
@@ -208,4 +221,16 @@
   overflow: hidden;
   height: 150px;
 }
-
+.RSPbtn-box > button {
+  padding: 5px 10px;
+  margin-right: 3px;
+  border:none;
+  background-color: rgb(248, 228, 203);
+  border-radius: 50%;
+}
+.RSPbtn-box > button:hover {
+  padding: 5px 10px;
+  margin-right: 3px;
+  background-color: rgb(241, 193, 121);
+  border-radius: 50%;
+}
