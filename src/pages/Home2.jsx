@@ -9,6 +9,7 @@ import '../App.css';
 import { dataEmotionLog } from '../components/EmoData';
 import { useState } from "react";
 import { Form } from "react-bootstrap";
+import Calendar from "../components/Calendar";
 
 function Home2 () {
     const settings = {
@@ -45,8 +46,10 @@ function Home2 () {
         <br/>
         <span className='add-emotion'>
         <h6> 기록하기 </h6> </span>
-        <br />
-        <input onChange={(e)=>{setNewfeel(e.target.value)}} placeholder="날짜를 입력하세요" />
+        <br/>
+        
+        <Calendar />
+        <input onChange={(e)=>{setNewfeel(e.target.value)}} placeholder="달력으로 날짜값 받기" />
         <p>{newfeel}</p>
         
         <Form>
