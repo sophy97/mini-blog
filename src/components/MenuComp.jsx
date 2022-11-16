@@ -4,13 +4,13 @@
  * 홈 : 일상글
  * 주제2 : 감정(이모지로 간단히 기록하기)
  * 피드백모달 여기 넣기
- * 다크모드 토글버튼
+ * 달력
  */
 import Rating from "./Rating";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
-// import { useTheme } from "styled-components";
+import Calendar from "./Calendar";
 
 const MenuComp = () => {
     // 모달: 동적 ui 만들기 위한 state
@@ -21,18 +21,18 @@ const MenuComp = () => {
     return ( 
         <div className='themes'>
             <ul>
-                <li onClick={()=>{navigate('/')}}> 📓 Log </li>
-                <li onClick={()=>{navigate('/emolog')}}> 😊 Emotion-Log </li>
+                <li onClick={()=>{navigate('/')}}> Log </li>
+                <li onClick={()=>{navigate('/emolog')}}> EmotionLog </li>
                 <li><p className="feedback-btn"
                 onClick={()=>{ setModal(!modal) }}> ⭐FeedBack 
                 </p></li>
                 {
                 modal ? <Modal modal={modal} setModal={setModal} /> : null
                 }
-                {/* onClick={useTheme} 다크모드 나중에 연결할 것 */}
-                <li className="theme-btn">🌜</li>
+                {/* <Calendar /> */}
             </ul>
         </div>
+
     );
 }
 

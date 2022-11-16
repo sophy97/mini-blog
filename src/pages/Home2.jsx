@@ -1,76 +1,85 @@
-/*  Home 2 : 포스팅2 , 날짜와 기분만 간단하게 나온다
-    감정 간단히 기록하는 공간 - ui 구성 카드형식으로 매일 기록하게
+/*  Home 2 
+    포스팅2 , 달력에 이모티콘으로 간단히 그날의 기분을 기록
 */ 
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 import '../App.css';
-import { dataEmotionLog } from '../components/EmoData';
 import { useState } from "react";
-import { Form } from "react-bootstrap";
+import TextInput from "../components/TextInput";
+import Select from "../components/Select";
+import {Col, Container, Row} from "react-bootstrap";
 import Calendar from "../components/Calendar";
 
+// select box에 props로 보낼 옵션값
+const feelings = ["😍", "🤣", "😊", "😐", "😢", "😭", "😡"];
+
 function Home2 () {
-    const settings = {
-        dots: false,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 3000,
-        cssEase: "linear"
-    };
 
-    // 입력받은 '오늘의 기분' 데이터를 슬릭슬라이더에 추가하기
-    const [newfeel, setNewfeel] = useState("");
-
+    // 값을 받아올 공간 (초기값:공백) / 객체형태
+    const [formInput, setFormInput] = useState({
+        memo : "",
+        date : "",
+        feelings :"",
+    });
+    //값 들어오는지 체크
+    console.log(formInput);
 
     return (
         <>
         <br/><br/>
         <h2>Emotion Log</h2>
-        <p>오늘의 기분을 알려주세요</p>
-        <br/>
-        <p>this week</p>
-        <Slider {...settings}>
-            { dataEmotionLog.map((item)=>(
-            <div className='emotion-card'>
-                    <h1 className="feeling">{item.feeling}</h1>
-                    <h4>{item.date}</h4>
-                    <p>{item.memo}</p>
-            </div>
-        )) }
-        </Slider>
-        <br/>
-        <span className='add-emotion'>
-        <h6> 기록하기 </h6> </span>
-        <br/>
+        <br /><br /><br />
+        <p>오늘의 감정을 기록해보세요</p>
         
-        <Calendar />
-        <input onChange={(e)=>{setNewfeel(e.target.value)}} placeholder="달력으로 날짜값 받기" />
-        <p>{newfeel}</p>
-        
-        <Form>
-        {['radio'].map ((type) => (
-        <div key={`inline-${type}`} className="mb-3">
-            <Form.Check inline
-            label="😍" name="emoji" type={type} id={`inline-${type}-1`} />
-            <Form.Check inline
-            label="🤣" name="emoji" type={type} id={`inline-${type}-2`} />
-            <Form.Check inline
-            label="😊" name="emoji" type={type} id={`inline-${type}-3`} />
-            <Form.Check inline
-            label="😢" name="emoji" type={type} id={`inline-${type}-4`} />
-            <Form.Check inline
-            label="😭" name="emoji" type={type} id={`inline-${type}-5`} />
-            <Form.Check inline
-            label="😡" name="emoji" type={type} id={`inline-${type}-6`} />
-        </div> ))
-        }
-        <button>등록</button>
-        </Form>
+            
+                <Calendar />
+                <Container className="h2-box">
+                <Row>
+                    <Col>
+
+                    </Col>
+                </Row>
+                <div className="h2form">
+                    <div className="h2form-item">
+                    <p>오늘의 기분은 어떤가요?</p>
+                    <Select 
+                    value={formInput.feelings}
+                    setValue={(value)=>{
+                        setFormInput((state)=>({
+                            ...state,
+                            feelings:value
+                        }));
+                    }} 
+                    // select 선택지를 props에 넘겨야
+                    options={feelings}
+                    />
+                    </div>
+                    <div className="h2form-item">
+                    <p>간단한 메모를 남길 수 있어요!</p>
+                    <TextInput 
+                    value={formInput.memo}
+                    setValue={(value2)=>{
+                        setFormInput((state)=>({
+                            ...state,
+                            memo: value2
+                        }));
+                    }}
+                    />
+                    </div>
+                    <div className="h2form-btns">
+                    <button
+                    // 클릭시 저장되었다는 얼럿창과 함께 폼 초기화
+                    onClick={() => {
+                    alert("저장되었습니다.");
+                    setFormInput ({
+                        memo : "",
+                        date : "",
+                        feelings :"",
+                        });
+                    }}>
+                    등록</button>
+                    </div>
+                </div>
+        </Container>
         </>
     );
 }

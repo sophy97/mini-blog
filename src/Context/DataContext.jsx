@@ -12,13 +12,14 @@ value 라는 Props로 설정해서 자식 컴포넌트들에서 바로(전역)�
 // 내보내는 방식. 컴포넌트니까 함수형컴포넌트(형식)으로 작성
 const DataProvider = ({children})=> {
     // children으로 사용할 값들을 useState hook 통해 들고온다
-    //1 유저 정보
+    // 1 유저 정보
     //로그인해서 계속 사용되어야 할 유저정보
     const [user, setUser] = useState( { name:"sophy", profile:null, follower:350 });
 
-    //2 해당 유저의 포스팅 정보
-    //포스팅리스트에 출력될 정보 > 홈에서
+    // 2 해당 유저의 포스팅 출력될 정보 > 홈1 따로 관리중
 
+    // 3 홈2에서 입력받을값 
+    
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해 넣어둔다
     const value = 
     {
