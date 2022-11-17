@@ -12,7 +12,7 @@
   text-align: center;
   width: 100%;
   height: 100%;
-  background-color:#eee;
+  background-color:#f7f7f2;
   font-family: 'Noto Sans KR', sans-serif;
 }
 .title {
@@ -22,17 +22,21 @@
   top: 60px;
   left: 80px;
 }
+
 .header {
   background-image:url('../public/img/headersize.jpg');
   width:100%;
   height: 530px;
 }
+.all-menu:hover {
+  cursor: pointer;
+}
 .footer {
   background-color: #282828;
-  color:rgb(203, 203, 243);
+  color:#FFFACD;
   text-align: center;
   width: 100%;
-  height: 150px;
+  height: 200px;
 }
 .footer-title {
   font-family: 'Noto Serif KR', serif;
@@ -83,8 +87,8 @@
   cursor: pointer;
 }
 .feedback-modal {
-  position: absolute;
-  top: 650px;
+  position: fixed;
+  top: 300px;
   right: 200px;
   width: 300px;
   height: 200px;
@@ -124,11 +128,13 @@
   font-size: large;
   cursor: pointer;
 }
+.feedback-btn {
+  color:#DCDCDC;
+}
 .feedback-btn:hover {
-  transition: all 0.8s;
+  transition: all 0.3s;
   font-weight: bolder;
-  font-size: large;
-  color: #99785b;
+  color: #FFFACD;
   cursor: pointer;
 }
 .theme-btn:hover {
@@ -238,7 +244,7 @@
   padding-bottom: 20px;
 }
 .calendar {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -253,9 +259,9 @@
   flex-direction: row;
 }
 .cal-table td {
-  display:flex;
-  width:2vw;
-  height:3vh;
+  display: flex;
+  width:3vw;
+  height:6vh;
 }
 .cal-table td span {
   display: flex;
@@ -265,3 +271,65 @@
 .cal-control > button {
   border:none;
 }
+
+@keyframes slide-fade-in-dropdown-animation {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-fade-in-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-in-dropdown > ul {
+  animation: slide-fade-in-dropdown-animation .4s ease;
+}
+
+/* fade out */
+@keyframes slide-fade-out-dropdown-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.slide-fade-out-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-out-dropdown > ul {
+  animation: slide-fade-out-dropdown-animation 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+.menuNav {
+  float: right;
+}
+.drop-box {
+  font-size: small;
+}
+
+.dropmenu {
+  position: relative;
+  top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+.dropmenu li {
+  font-size: smaller;
+}
+.dropmenu li:hover {
+  cursor: pointer;
+  color:#FFFACD;
+}
+

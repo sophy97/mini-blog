@@ -5,10 +5,9 @@
 import { Outlet } from "react-router-dom";
 import Profile from '../components/Profile';
 import NavComp from "../components/NavComp";
-import Container from "react-bootstrap/esm/Container";
-import Col from "react-bootstrap/esm/Col";
-import Row from "react-bootstrap/esm/Row";
-import MenuComp from "../components/MenuComp";
+import { Col, Container, Row } from "react-bootstrap";
+import Weather from "../components/Weather";
+
 
 
 
@@ -16,17 +15,14 @@ const Layout = () => {
     return ( 
         <div>
             <NavComp />
-                <Container>
-                    <Row>
-                        <Col xs={3}> 
-                        <Profile /> 
-                        </Col>
-                        <Col xs={5}>
-                        <MenuComp />
-                        </Col>
-                    </Row>
-                </Container>    
-                
+            <Container>
+                <Row>
+                    <Col><Profile /></Col>
+                    <Col><Weather /></Col>
+                </Row>
+                    
+            </Container>
+            
             {/* Outlet으로 이 자체를 App.js로 내보냄 */}
             <Outlet />
         </div>

@@ -18,18 +18,17 @@ const Profile = () => {
     const navigate = useNavigate();
     return ( 
         <div className="profile-container">
-            <Card style={{ width: '15rem', fontSize:"font-family: 'Gowun Dodum', sans-serif"}}>
+            <Card style={{ width: '15rem', border:'none'}}>
                 <Card.Img variant="top" src=
                 {
                     state.user.profile ? (state.user.profile)
                     :
-                    ("기본프사.jpg")
+                    (".../public/img/기본프사.jpg")
                 } />
                 <Card.Body>
                 <Card.Title>{state.user.name}</Card.Title>
                 <Card.Text>
-                {state.user.name}의 블로그입니다 <br />
-                #일상 #맛집 #공부
+                {state.user.name} 입니다 <br />
                 </Card.Text>
                 <Button className='btn-sm' variant="outline-dark"
                 onClick={()=>navigate('/mypage')}
