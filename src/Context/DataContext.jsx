@@ -16,6 +16,9 @@ const DataProvider = ({children})=> {
     //로그인해서 계속 사용되어야 할 유저정보
     const [user, setUser] = useState( { name:"sophy", profile:null, follower:350 });
 
+    // 로그인 로그아웃 함수
+    const [login, setLogin] = useState(true);
+
     // 2 해당 유저의 포스팅 출력될 정보 > 홈1 따로 관리중
 
     // 3 홈2에서 입력받을값 
@@ -23,12 +26,14 @@ const DataProvider = ({children})=> {
     // 사용할 value값들을 state(초기값)과 action(변경값) 분리해 넣어둔다
     const value = 
     {
-        state: {user},
-        action: {setUser}
+        state: {user, login},
+        action: {setUser, setLogin}
     };
 
+    
     // DataProvider를 사용할 때, DataContext.Provider를 불러 사용하게끔
     // 이때, {children}은 Provider데이터를 공용으로 쓰는 컴포넌트들
+    
     return (
     <DataContext.Provider value={value}>
     {children} 

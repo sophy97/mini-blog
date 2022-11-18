@@ -9,13 +9,15 @@ const Dropdown = (props) => {
             setVisibilityAnimation(true);
         } else {
             setTimeout(() => {
-                setVisibilityAnimation(false);
+            setVisibilityAnimation(false);
             }, 400);
         }
     }, [props.visibility]);
 
     return ( 
-        <article className={`${props.visibility ? 'slide-fade-in-dropdown' : 'slide-fade-out-dropdown'}`}>
+        <article className=
+        {`${props.visibility ? "slide-fade-in-dropdown" : "slide-fade-out-dropdown"}`}
+        >
         { visibilityAnimation && props.children }      
         </article>
     );

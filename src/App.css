@@ -316,7 +316,9 @@
 .drop-box {
   font-size: small;
 }
-
+.drop-btn:hover {
+  color:#fad251c4;
+}
 .dropmenu {
   position: relative;
   top: 5px;
@@ -330,6 +332,13 @@
 }
 .dropmenu li:hover {
   cursor: pointer;
-  color:#FFFACD;
+  color:#fad251c4;
 }
 
+.profile-out {
+    width:40vw;
+    height:40vh;
+    margin-top:5vh;
+    margin-bottom:5vh;
+    border: 1px solid gainsboro;
+}

@@ -14,6 +14,7 @@ import GamesComp from './pages/GamesComp';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home2 from './pages/Home2';
+import About from './pages/About';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route path='/'  element={<Home />} />
             <Route path='emolog'  element={<Home2 />} />
+            <Route path='about'  element={<About />} />
             <Route path='login' element={<Login />} />
             <Route path='mypage' element={<MypageComp />} />
             <Route path='games' element={<GamesComp />} />

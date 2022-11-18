@@ -26,7 +26,6 @@ const Header = () => {
                     <li onClick={()=>{navigate('/')}}> Home </li>
                     <li onClick={()=>{navigate('/emolog')}}> Emotion Log </li>
                     <li onClick={()=>{navigate('/games')}}> PlayGround </li>
-                    <li onClick={()=>{navigate('/login')}}> Login </li>
                     <li onClick={()=>{navigate('/mypage')}}> Mypage </li>
                 </ul>
             </Dropdown>

@@ -6,7 +6,7 @@ const Footer = () => {
         <div>
             <div className="footer">
                 <br /><br /><br /><br /><br />
-                <h6 className="footer-title">기록하다
+                <h6 className="footer-title">기록하다<br />
                 <br />&copy; Copyright 2022. sophy97. All right reserved
                 </h6>
             </div>

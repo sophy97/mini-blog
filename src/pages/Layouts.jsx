@@ -20,7 +20,6 @@ const Layout = () => {
                     <Col><Profile /></Col>
                     <Col><Weather /></Col>
                 </Row>
-                    
             </Container>
             
             {/* Outlet으로 이 자체를 App.js로 내보냄 */}
