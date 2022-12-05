@@ -41,6 +41,12 @@
 .footer-title {
   font-family: 'Noto Serif KR', serif;
 }
+.video {
+  width: 100%;
+  height: 50%;
+}
+
+
 .thumb-up {size: 0.5em;}
 .thumb-up:hover {
   cursor: pointer;
@@ -185,16 +191,17 @@
   border: none;
 }
 .delete-btn {
-  padding: 5px 10px;
+  padding: 3px 6px;
   border: none;
   float: right;
 }
 .addpost-btn:hover, .delete-btn:hover {
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
+  background-color: #282828;
+  color:#D2E1FF;
+  transition: all 0.3s;
 	transform: scale(1.02);
-  background-color: #D2E1FF;
 }
 
 .post-detail, .write-btn, .add-emotion {
@@ -204,10 +211,12 @@
   border-radius: 0.5rem;
 }
 .post-detail:hover, .write-btn:hover, .add-emotion:hover {
-  cursor: pointer;
-  transition: all 0.2s;
-	transform: scale(1.05);
-  background-color: #D2E1FF;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #282828;
+    color:#D2E1FF;
+    transition: all 0.3s;
+    transform: scale(1.02);
 }
 .modify-btn1, .modify-btn2  {
   border-radius: 0.3rem;
@@ -341,4 +350,10 @@
     margin-top:5vh;
     margin-bottom:5vh;
     border: 1px solid gainsboro;
+}
+
+.info-wrapper {
+  padding: 10px;
+  margin-top: 30px;
+  border: 2px solid grey;
 }

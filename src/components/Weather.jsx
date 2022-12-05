@@ -9,7 +9,8 @@ const Weather = () => {
     const [location, setLocation] = useState('');
     const [result, setResult] = useState({});
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=&lang=kr&appid=${API_KEY}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units
+            =&lang=kr&appid=${API_KEY}`;
 
 
 const searchWeather = async(e) => {
@@ -35,8 +36,8 @@ const searchWeather = async(e) => {
                 <br />
                 <h4> weather 🌤 <span style={{color:'red',fontSize:'medium'}}>now</span></h4>
                 <br />
-                <input placeholder="도시 입력(eng) > 엔터" type="text"
-                onKeyDown={searchWeather}
+                <input placeholder="도시 입력(eng) > 엔터" 
+                type="text" onKeyDown={searchWeather}
                 value={location} onChange={(e)=>{setLocation(e.target.value)}}
                 />
                 {
@@ -48,7 +49,7 @@ const searchWeather = async(e) => {
                         {Math.round(((result.data.main.temp - 273.15) * 10)) / 10 }˚C
                         </div>
                         <div className="sky">
-                            {/* '즉시발동함수'를 통해 jsx{}에서 중첩조건문 사용 */}
+                        {/* '즉시발동함수'를 통해 jsx{}에서 중첩조건문 사용 */}
                         {
                             (function(){
                                 if(result.data.weather[0].main === 'Clear'){
@@ -65,7 +66,8 @@ const searchWeather = async(e) => {
                         {result.data.weather[0].main}
                         </div>                
                     </ResultWrap>
-                )}
+                    )
+                }
             </div>
         </WeatherWrap>
         
@@ -76,7 +78,6 @@ export default Weather;
 
 
 // styled components 사용
-
 const WeatherWrap = styled.div`
     width:40vw;
     height:40vh;

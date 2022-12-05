@@ -5,7 +5,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import DataContext from "../Context/DataContext";
 import { useContext } from "react";
 import ProfileUpdate from "../pages/ProfileUpdate";
-import MySlider from '../components/MySlider';
 
 
 const MypageComp = () => {
@@ -49,7 +48,6 @@ const MypageComp = () => {
                     </Col>
                 </Row>
             </Container> <br />
-            <MySlider/>
         </div>
         
     );

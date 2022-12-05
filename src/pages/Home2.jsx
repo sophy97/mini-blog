@@ -1,18 +1,23 @@
 /*  Home 2 
     포스팅2 , 달력에 이모티콘으로 간단히 그날의 기분을 기록
 */ 
-import React from "react";
 import '../App.css';
-import { useState } from "react";
-import TextInput from "../components/TextInput";
-import Select from "../components/Select";
-import {Col, Container, Row} from "react-bootstrap";
-import Calendar from "../components/Calendar";
+import { useCallback, useState } from "react";
+// import TextInput from "../components/TextInput";
+// import Select from "../components/Select";
+// import {Col, Container, Row} from "react-bootstrap";
+// import Calendar from "../components/Calendar";
+import Info from '../components/Info';
 
-// select box에 props로 보낼 옵션값
+
 const feelings = ["😍", "🤣", "😊", "😐", "😢", "😭", "😡"];
+// select box에 props로 보낼 옵션값
+
+
 
 function Home2 () {
+
+
 
     // 값을 받아올 공간 (초기값:공백) / 객체형태
     const [formInput, setFormInput] = useState({
@@ -20,22 +25,68 @@ function Home2 () {
         date : "",
         feelings :"",
     });
-    //값 들어오는지 체크
+    //값 들어오는지 체크 
     console.log(formInput);
+    
+    // Info관련 정보
+    const [color, setColor] = useState("");
+    const [movie, setMovie] = useState("");
 
-    return (
-        <>
-        <br/><br/>
-        <h2>Emotion Log</h2>
-        <br /><br /><br />
-        <p>오늘의 감정을 기록해보세요</p>
-        
-            
-                <Calendar />
-                <Container className="h2-box">
+    const onChangeHandler = useCallback(e => {
+        if (e.target.id === "color") setColor(e.target.value);
+        else setMovie(e.target.value);
+    }, []);
+
+
+
+        return (
+                <div>
+                <div>
+                    <label>
+                    What is your favorite color of rainbow ?
+                    <input id="color" value={color} onChange={onChangeHandler} />
+                    </label>
+                </div>
+                <div>
+                    What is your favorite movie among these ?
+                    <label>
+                    <input
+                        type="radio"
+                        name="movie"
+                        value="Marriage Story"
+                        onChange={onChangeHandler}
+                    />
+                    Marriage Story
+                    </label>
+                    <label>
+                    <input
+                        type="radio"
+                        name="movie"
+                        value="The Fast And The Furious"
+                        onChange={onChangeHandler}
+                    />
+                    The Fast And The Furious
+                    </label>
+                    <label>
+                    <input
+                        type="radio"
+                        name="movie"
+                        value="Avengers"
+                        onChange={onChangeHandler}
+                    />
+                    Avengers
+                    </label>
+                </div>
+                <Info color={color} movie={movie} />
+                </div>
+            );
+        };
+
+    export default Home2;
+
+            {/* <Container className="h2-box">
                 <Row>
                     <Col>
-
                     </Col>
                 </Row>
                 <div className="h2form">
@@ -78,10 +129,9 @@ function Home2 () {
                     }}>
                     등록</button>
                     </div>
-                </div>
-        </Container>
-        </>
-    );
-}
+                    </div>
+            </Container> */}
 
-export default Home2;
+
+
+
