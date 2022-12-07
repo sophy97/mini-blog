@@ -1,18 +1,20 @@
 // 페이지: login
 // Nav바 에서 버튼 눌러 이동 > 유저 정보 입력받는 공간(bootstrap)
 // 로그인 끝나면 홈화면으로 이동 + "~님 반갑습니다" alert
-import { useContext } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 import DataContext from '../Context/DataContext';
+import Auth from '../Firebase/Auth';
+
 
 const Login = () => {
     const [name, setName] = useState("");
     const data = useContext(DataContext);
     const {state, action} = data;
     const navigate = useNavigate();
+
 
     const loginUser =()=> {
         action.setUser ( { name:name, profile:null, likelist:[] } );
@@ -21,7 +23,10 @@ const Login = () => {
     }
 
     return ( 
-        <Form className='m-5' onSubmit={loginUser}>
+      <>
+      <Auth />
+      
+      <Form className='m-5' onSubmit={loginUser}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>아이디를 입력하세요</Form.Label>
           <Form.Control type="text" placeholder="id" 
@@ -39,7 +44,8 @@ const Login = () => {
           로그인하기
         </Button>
       </Form>
-    );
-}
+      </>
+      );
+    }
 
 export default Login;

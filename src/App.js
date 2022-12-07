@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 //css관련 import
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import app from './Firebase/firebase';
 
 import Layout from './pages/Layouts';
 // 전역 사용할 데이터컨텍스트 
