@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import DataContext from '../Context/DataContext';
 import '../App.css';
 import LoginCardComp from './LoginCardComp';
-import Login from '../pages/Login';
 
 
 
