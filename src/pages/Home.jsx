@@ -4,7 +4,7 @@
 버튼 > PostModal 열어서 포스팅 내용 보여주는 방식
 */ 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../public/Modal.css';
 
 const Home =()=> {
@@ -94,7 +94,7 @@ return (
         {
             writemodal === true ? 
             <WriteModal input={input} setInput={setInput} addTitle={addTitle}
-                        clickNum={clickNum} addContent={addContent} setWritemodal={setWritemodal}/>
+                    clickNum={clickNum} addContent={addContent} setWritemodal={setWritemodal}/>
             : null
         }
         
@@ -109,6 +109,13 @@ export default Home;
 
 // 세부 포스트 보여주는 모달
 function PostModal (props) {
+
+    // 이 컴포넌트 실행될때 뒷배경 스크롤 방지
+    useEffect(() => {
+        document.body.style= `overflow: hidden`;
+        return () => document.body.style = `overflow: auto`
+    }, []);
+
     return (
     <div className='back-modal'>
         <div className="overlay">
@@ -124,25 +131,36 @@ function PostModal (props) {
 }
 
 
-// 글쓰기 폼 보여주는 모달
+// 글쓰기 폼 모달
 function WriteModal (props) {
+
+    // 이 컴포넌트 실행될때 뒷배경 스크롤 방지
+    useEffect(() => {
+        document.body.style= `overflow: hidden`;
+        return () => document.body.style = `overflow: auto`
+    }, []);
+
     return (
-    <div className='writeform'>
-        <input onChange={ (e)=>{ props.setInput({...props.input, inputTitle:e.target.value}) } } 
-        placeholder="제목" className='title-input' /> <br />
-        <textarea onChange={ (e)=>{ props.setInput({...props.input, inputContent:e.target.value}) } } 
-        placeholder="내용을 입력하세요" className='content-input' />
-        <br />
-        <span onClick={()=>{
-            props.setWritemodal(!WriteModal); alert("포스트 등록을 취소합니다") }} 
-        className='close-btn'> 작성 취소 </span>
-        <br /><br />
-        <button className='addpost-btn' onClick={ ()=>{ 
-            props.addTitle(props.inputTitle);
-            props.addContent(props.inputContent);
-            props.setWritemodal(!WriteModal); 
-            alert("등록되었습니다");
-            }}> 포스트 등록 </button>
+    <div className='back-modal'>
+        <div className='overlay'>
+            <div className='modal-content2'>
+                <input onChange={ (e)=>{ props.setInput({...props.input, inputTitle:e.target.value}) } } 
+                placeholder="제목" className='title-input' /> <br />
+                <textarea onChange={ (e)=>{ props.setInput({...props.input, inputContent:e.target.value}) } } 
+                placeholder="내용을 입력하세요" className='content-input' />
+                <br />
+                <span onClick={()=>{
+                    props.setWritemodal(!WriteModal); alert("포스트 등록을 취소합니다") }} 
+                className='close-btn'> 작성 취소 </span>
+                <br /><br />
+                <button className='addpost-btn' onClick={ ()=>{ 
+                    props.addTitle(props.inputTitle);
+                    props.addContent(props.inputContent);
+                    props.setWritemodal(!WriteModal); 
+                    alert("등록되었습니다");
+                    }}> 포스트 등록 </button>
+            </div>
+        </div>
     </div>
     );
 }

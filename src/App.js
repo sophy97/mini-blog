@@ -28,11 +28,11 @@ function App() {
       <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/'  element={<Home />} />
-            <Route path='emolog'  element={<Home2 />} />
-            <Route path='about'  element={<About />} />
-            <Route path='login' element={<Login />} />
-            <Route path='mypage' element={<MypageComp />} />
-            <Route path='games' element={<GamesComp />} />
+            <Route path='/emolog'  element={<Home2 />} />
+            <Route path='/about'  element={<About />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/mypage' element={<MypageComp />} />
+            <Route path='/games' element={<GamesComp />} />
           </Route>
       </Routes>
     <Footer />
