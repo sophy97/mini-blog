@@ -8,6 +8,7 @@ import {db} from '../Firebase/firebase';
 import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import styled from "styled-components";
 
+import { setDoc } from "firebase/firestore";
 
 
 const Login = () => {
@@ -38,14 +39,31 @@ const Login = () => {
     // ? 이따 users 추가하고 삭제하는거 진행을 도와줄 state
     // db에 이렇게 객체형식으로 유저 정보 담아두고 꺼내쓰고싶음
     // name,age랑 email, password를 아래 객체로 연결해서 db
+
   const [users, setUsers] = useState([
     {
+      uid:"",
       name:"",
       email:"",
       password:"",
       age:0,
     }
   ]);
+  const createUsers = async (user) =>{
+    // addDoc을 이용해서 내가 원하는 collection에 내가 원하는 key로 값을 추가한다.
+    // await addDoc(usersCollectionRef, {name: newName, age:Number(newAge)});
+    // // 화면 업데이트를 위한 state 변경
+    // setChanged(true);
+    const addedUser = {
+      uid : user.uid,
+      email : email,
+      password : password,
+      name : newName,
+      age : newAge
+    }
+    await setDoc(doc(db, "users", user.uid), addedUser)
+
+  }
   // db의 users 컬렉션을 가져옴
   const usersCollectionRef = collection(db, "users");
 
@@ -61,7 +79,6 @@ const Login = () => {
         if (user) {   // user 있으면
         uid = user.uid;
           setIsLoggined(true); // 로그인 됨
-          console.log(uid);
         } else {
           setIsLoggined(false); // 로그인 안됨
         }
@@ -87,7 +104,8 @@ const toggleSignup = () =>{
     const signup = async () => {
         const result = await createUserWithEmailAndPassword(auth, email, password);
         // 결과 확인
-        console.log(result);
+        console.log(result.user)
+        createUsers(result.user);
         alert("회원가입이 완료되었습니다");
     }
 
@@ -119,7 +137,7 @@ const toggleSignup = () =>{
     // getDocs로 컬렉션안에 데이터 가져오기
     const data = await getDocs(usersCollectionRef);
     // users에 data안의 자료 추가. 객체에 id 덮어씌움
-    setUsers(data.docs.map((doc)=>({ ...doc.data(), id: doc.id})))
+    setUsers(data.docs.map((doc)=>({ ...doc.data(), id: data.id})))
     }
     // 함수실행
     getUsers();
@@ -128,18 +146,17 @@ const toggleSignup = () =>{
     },[changed]) // 처음에 한번 그리고, changed가 불릴때마다 화면을 다시 그릴거다
 
   // 생성 - C
-  const createUsers = async () =>{
-    // addDoc을 이용해서 내가 원하는 collection에 내가 원하는 key로 값을 추가한다.
-    await addDoc(usersCollectionRef, {name: newName, age:Number(newAge)});
-    // 화면 업데이트를 위한 state 변경
-    setChanged(true);
-  }
+
+  
+
+// Add a new document in collection "cities"
 
   // 업데이트 - U
   const updateUser = async(id, age) =>{
     // 내가 업데이트 하고자 하는 db의 컬렉션의 id를 뒤지면서 데이터를 찾는다
     const userDoc = doc(db, "users", id)
-    // 내가 업데이트 하고자 하는 key를 어떻게 업데이트할 지 준비, 주의:db에는 문자열로 저장돼있음 > createUsers()함수 안에서 age를 생성할때 숫자열로 형변환 해줘야한다
+    // 내가 업데이트 하고자 하는 key를 어떻게 업데이트할 지 준비, 
+    // 주의:db에는 문자열로 저장돼있음 > createUsers()함수 안에서 age를 생성할때 숫자열로 형변환 해줘야한다
     const newField = {age: age + 1};
     // updateDoc()을 이용해서 업데이트
     await updateDoc(userDoc, newField);
