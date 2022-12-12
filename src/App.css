@@ -1,43 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
 
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Noto Serif KR', serif;
 }
 .App {
   text-align: center;
   width: 100%;
   height: 100%;
-  background-color:#f7f7f2;
-  font-family: 'Noto Sans KR', sans-serif;
+  background-color: white;
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }
 .title {
-  font-family: 'Noto Serif KR', serif;
+  font-family: 'Caveat', cursive;
   color:#eee;
   position: absolute;
   top: 60px;
   left: 80px;
 }
-
 .header {
   background-image:url('../public/img/headersize.jpg');
   width:100%;
   height: 530px;
+  display: cover;
 }
 .all-menu:hover {
   cursor: pointer;
 }
+.mynavbar {
+  font-family: 'Caveat', cursive;
+}
+
+
 .footer {
   background-color: #282828;
-  color:#FFFACD;
+  color:#D2E1FF;
   text-align: center;
   width: 100%;
   height: 200px;
 }
+
 .footer-title {
   font-family: 'Noto Serif KR', serif;
 }
@@ -46,18 +52,13 @@
   height: 50%;
 }
 
-
-.thumb-up {size: 0.5em;}
-.thumb-up:hover {
-  cursor: pointer;
-}
 .post-modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 80px;
-  background-color: rgb(230, 237, 245);
+  background-color: rgb(224, 234, 245);
   border: 4px solid rgb(171, 182, 194);
   border-radius: 8px;
 }
@@ -68,6 +69,7 @@
 }
 
 .Wrapper-posts {
+  font-family: 'IBM Plex Sans KR', sans-serif;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -98,9 +100,9 @@
   right: 200px;
   width: 300px;
   height: 200px;
-  background-color: rgb(245, 243, 237);
-  border: 4px solid wheat;
-  border-radius: 8px;
+  background-color:azure;
+  border: 4px solid #bcd1fc;
+  border-radius: 6px;
 }
 
 .modal-box {
@@ -112,7 +114,7 @@
   border: none;
 }
 .modal-btn:hover{
-  background-color: #D2E1FF;
+  background-color: #c6d7f8;
 }
 
 .themes {
@@ -134,13 +136,11 @@
   font-size: large;
   cursor: pointer;
 }
-.feedback-btn {
-  color:#DCDCDC;
-}
+
 .feedback-btn:hover {
   transition: all 0.3s;
   font-weight: bolder;
-  color: #FFFACD;
+  color: darkblue;
   cursor: pointer;
 }
 .theme-btn:hover {
@@ -151,21 +151,18 @@
   font-size: large;
   cursor: pointer;
 }
-
 .post-detail {
   margin-top : 20px;
   padding : 20px;
   background : #eee;
 }
-
 .mypage-box {
   background-color: #DCDCDC;
   border-radius: 0.8rem;
   margin-bottom: 30px;
 }
-
 .writeform {
-  border: 2px solid darkgray;
+  border: 2px solid rgb(199, 199, 199);
   border-radius: 8px;
   padding: 50px 80px;
   margin: 50px 20px;
@@ -281,41 +278,29 @@
   border:none;
 }
 
+
+/* fade in */
 @keyframes slide-fade-in-dropdown-animation {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+  0% {transform: translateY(-200%)}
+  100% {transform: translateY(0)}
 }
-
 .slide-fade-in-dropdown {
   overflow: hidden;
 }
-
 .slide-fade-in-dropdown > ul {
-  animation: slide-fade-in-dropdown-animation .4s ease;
+  animation: slide-fade-in-dropdown-animation .8s ease;
 }
 
 /* fade out */
 @keyframes slide-fade-out-dropdown-animation {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-100%);
-  }
+  0% {transform: translateY(0)}
+  100% {transform: translateY(-200%)}
 }
-
 .slide-fade-out-dropdown {
   overflow: hidden;
 }
-
 .slide-fade-out-dropdown > ul {
-  animation: slide-fade-out-dropdown-animation 0.4s ease;
+  animation: slide-fade-out-dropdown-animation .8s ease;
   animation-fill-mode: forwards;
 }
 
@@ -325,23 +310,32 @@
 .drop-box {
   font-size: small;
 }
+
 .drop-btn:hover {
-  color:#fad251c4;
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: scale(1.2);
+  color:rgb(212, 247, 247);
 }
 .dropmenu {
   position: relative;
   top: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   padding-left: 0;
   list-style: none;
 }
 .dropmenu li {
+  font-family: 'Caveat', cursive;
   font-size: smaller;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .dropmenu li:hover {
   cursor: pointer;
-  color:#fad251c4;
+  transition: all 0.3s;
+  transform: scale(1.2);
+  color:#D2E1FF;
 }
 
 .profile-out {

@@ -21,8 +21,8 @@ const Layout = () => {
                     <Col><Weather /></Col>
                 </Row>
             </Container>
-            
-            {/* Outlet으로 이 자체를 App.js로 내보냄 */}
+            {/* Outlet으로 이 자체를 App.js로 내보냄
+            ! Outlet 자리에 Layout아래에 중첩 연결된 컴포넌트들이 계속 보이는 구조 ! */}
             <Outlet />
         </div>
     );

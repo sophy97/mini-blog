@@ -22,7 +22,6 @@ function App() {
 
   return (
   <DataProvider>
-  
     <div className="App">
     <Header />
       <Routes>

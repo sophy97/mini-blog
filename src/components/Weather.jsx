@@ -22,7 +22,6 @@ const searchWeather = async(e) => {
             })
         console.log(data);
         setResult(data);
-
         } catch(err) {
             alert(err);
         }
@@ -30,13 +29,12 @@ const searchWeather = async(e) => {
 }
 
     return ( 
-        
         <WeatherWrap>
             <div className="weatherContentWrap">
                 <br />
                 <h4> weather 🌤 <span style={{color:'red',fontSize:'medium'}}>now</span></h4>
                 <br />
-                <input placeholder="도시 입력(eng) > 엔터" 
+                <input placeholder="도시(eng) > 엔터" 
                 type="text" onKeyDown={searchWeather}
                 value={location} onChange={(e)=>{setLocation(e.target.value)}}
                 />
@@ -79,31 +77,31 @@ export default Weather;
 
 // styled components 사용
 const WeatherWrap = styled.div`
-    width:40vw;
-    height:40vh;
+    width:35vw;
+    height:30vh;
     margin-top:5vh;
     margin-bottom:5vh;
     background-color:white;
     border-radius:8px;
-
     .weatherContentWrap {
         margin-top:20px;
         margin-bottom:10px;
     }
     .weatherContentWrap > input {
+        width:150px;
         padding:2px;
         border:1px solid lightgray;
         border-radius:8px;
     }
     .weatherContentWrap > input:focus {
         border:none;
-        background:	#FFFFE0;
+        background-color:lightgray;
     }
-
 `;
 
 const ResultWrap = styled.div`
     margin-top:30px;
     padding:10px;  
+    border:2px solid lightgray;
     border-radius:8px;
 `;
