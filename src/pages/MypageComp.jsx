@@ -5,11 +5,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import DataContext from "../Context/DataContext";
 import { useContext } from "react";
 import ProfileUpdate from "../pages/ProfileUpdate";
+import { useSelector } from 'react-redux';
 
 
 const MypageComp = () => {
     const data = useContext(DataContext);
     const {state} = data;
+    const user = useSelector((state)=>(state.user));
+    console.log(user);
     // const navigate = useNavigate();
     return ( 
         <div>
@@ -37,7 +40,6 @@ const MypageComp = () => {
                                 이미지를 추가해주세요<ProfileUpdate /></p>
                         </div>
                     }
-                    
                     </Col>
                     <Col>
                         <div>
@@ -48,6 +50,7 @@ const MypageComp = () => {
                     </Col>
                 </Row>
             </Container> <br />
+
         </div>
         
     );

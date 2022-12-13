@@ -5,25 +5,27 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 // firebase.js 에서 import 해온 db
 import {db} from '../Firebase/firebase';
 // db에 접근해서 데이터를 꺼내게 도와줄 친구들
-import { collection, getDocs, addDoc, doc, setDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import styled from "styled-components";
+import { useDispatch } from 'react-redux';
 
 
 
-const Login = () => {
+const FirebaseLogin = () => {
 
-  // @ auth : new user의 이메일과 비밀번호 입력받아 회원가입
+  const dispatch = useDispatch();
+  // @ auth : new user의 이름,나이,이메일과 비밀번호 입력받아 회원가입
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSignup, setIsSignup] = useState(true);
- // input으로 받을 new user의 이름과 나이
   const [newName, setNewName] = useState("");
   const [newAge, setNewAge] = useState(0);
-  
-  // 처음에는 false이고 나중에 사용자 존재 판명이 모두 끝났을 때 true > 해당 화면을 render
-  const [init, setInit] = useState(false); 
+  // 가입여부 확인 state
+  const [isSignup, setIsSignup] = useState(true);
+  // 로그인 여부 확인 state
   const [isLoggined, setIsLoggined] = useState(false);
-
+  // 처음에는 false, 나중에 사용자 존재 판명 이후 true > 해당 화면 render
+  const [init, setInit] = useState(false); 
+  
   const navigate = useNavigate();
 
 
@@ -37,9 +39,7 @@ const Login = () => {
   const [changed, setChanged] = useState(false); 
   // console.log(newName, newAge);
 
-    // ? 이따 users 추가/삭제 진행할 state
-    // db에 이렇게 객체형식으로 유저 정보 담아두고 꺼내쓰고싶음
-    // name,age랑 email, password를 아래 객체로 연결해서 db
+  // users배열 state
   const [users, setUsers] = useState([
     {
       uid:"",
@@ -49,26 +49,22 @@ const Login = () => {
       age:0,
     }
   ]);
-  const createUsers = async (user) =>{
-    // addDoc을 이용,
+  // 바로위 users배열에 컬렉션과 필드에 들어갈 데이터를 추가하기 위한 함수
+  const createUsers = async (newuser) =>{
+    // addDoc과 차이점 > 메모 확인
     // db collection에 내가 원하는 key로 값을 추가
-    // await addDoc(usersCollectionRef, {name: newName, age:Number(newAge)});
-    const addedUser = {
-      uid : user.uid,
+    const addUser = {
+      uid : newuser.uid,
       email : email,
       password : password,
       name : newName,
       age : newAge,
     }
-    await setDoc(doc(db, "users", user.uid), addedUser);
+    // setDoc함수로 db에 컬렉션 추가하는 형식을 작성함, 그 두번째인자로 addedUser를 추가해줌
+    await setDoc(doc(db, "users", newuser.uid), addUser);
   }
-    // db의 users 컬렉션을 가져옴
+    // db의 users 컬렉션을 가져옴 == database에 users 라는 컬렉션과 연결한다는 의미
     const usersCollectionRef = collection(db, "users");
-
-    // map에 부여할 키값으로 쓰기 위한, 유니크 id를 만들기 위한 useId(); - react 18
-    const uniqueId = useId();
-    //console.log(uniqueId);
-
 
 
 // @ auth 로그인 : 처음값 init
@@ -98,11 +94,11 @@ const toggleSignup = () =>{
     setIsSignup((prev)=>!prev);
 }
 
-// @기존 회원가입
+  // 회원가입
     const signup = async () => {
         const result = await createUserWithEmailAndPassword(auth, email, password);
         // 결과 확인
-        console.log(result.user)
+        console.log(result.user);
         createUsers(result.user);
         alert("회원가입이 완료되었습니다");
     }
@@ -110,10 +106,18 @@ const toggleSignup = () =>{
     // 로그인
     const signin = async () => {
         const result = await signInWithEmailAndPassword(auth, email, password);
-        console.log(result);
+        console.log(result.user);
+        const addUser = {
+          uid : result.user.uid,
+          email : result.user.email,
+          password : result.user.password,
+          name : result.user.newName,
+          age : result.user.newAge,
+        }
+        dispatch({ type:"Login", payload:addUser })
         alert("로그인 성공");
+        setIsSignup(true);
         navigate('/mypage');
-        
     }
     // 제출
     const onSubmit = async (e) =>{
@@ -121,7 +125,6 @@ const toggleSignup = () =>{
         if(isSignup) {
             signup();
         } else {
-            alert("회원정보를 찾을 수 없습니다. 회원가입하세요")
             signin();
         }
     }
@@ -135,45 +138,24 @@ const toggleSignup = () =>{
     // getDocs로 컬렉션안에 데이터 가져오기
     const data = await getDocs(usersCollectionRef);
     // users에 data안의 자료 추가. 객체에 id 덮어씌움
-    setUsers(data.docs.map((doc)=>({ ...doc.data(), id: data.id})))
+    setUsers(data.docs.map((doc)=>({ ...doc.data(), id: data.id})));
     }
     // 함수실행
     getUsers();
      // 뭐든 동작할때마다 changed가 true값으로 변경 > 화면 구성 후 다시 false로 돌려줘야 다시 써먹음
     setChanged(false);
-    },[changed]) // 처음에 한번 그리고, changed가 불릴때마다 화면을 다시 그릴거다
+    },[changed]) // 처음에 한번 그리고, changed가 불릴때마다 화면을 다시 그린다
 
-  // 생성 - C
-
-  // 업데이트 - U
-  // const updateUser = async(id, age) =>{
-  //   // 내가 업데이트 하고자 하는 db의 컬렉션의 id를 뒤지면서 데이터를 찾는다
-  //   const userDoc = doc(db, "users", id)
-  //   // 내가 업데이트 하고자 하는 key를 어떻게 업데이트할 지 준비, 
-  //   // 주의:db에는 문자열로 저장돼있음 > createUsers()함수 안에서 age를 생성할때 숫자열로 형변환 해줘야한다
-  //   const newField = {age: age + 1};
-  //   // updateDoc()을 이용해서 업데이트
-  //   await updateDoc(userDoc, newField);
-  // }
-
-  // 삭제 - D
-  const deleteUser = async(id) =>{
-    // 내가 삭제하고자 하는 db의 컬렉션의 id를 뒤지면서 데이터를 찾는다
-    const userDoc = doc(db, "users", id);
-    // 기다렸다가 deleteDoc을 이용해서 삭제
-    await deleteDoc(userDoc);
-  }
 
   // 띄워줄 데이터 key값에 고유ID값 부여
-  const showUsers = users.map((value)=> (
-    <div key={uniqueId}> 
-      <h4>Name: {value.name}</h4>
-      <h4>Email : {value.email}</h4>
+  const showUsers = users.map((value,idx)=> (
+    <div key={idx}> 
+    <br />
+      <h5>Name: {value.name}</h5>
+      <p>Email : {value.email}</p>
       <p>Age: {value.age}</p> 
         {/* 증가버튼은 이 안에 있어야 각 다른 데이터마다 붙는다, users data를 map으로 돌기때문에, 그 안의 id랑 age를 넣어주면 된다.*/}
         {/* id를 넣어주는 이유는, 우리가 수정하고자 하는 데이터를 찾아야하기 때문에. */}
-        {/* <button onClick={()=>{updateUser(value.id, value.age)}}>Increase Age</button> */}
-        <button onClick={()=>{deleteUser(value.id)}}>Delete User</button>
     </div>
     ))
 
@@ -184,9 +166,7 @@ return (
       <>
       <MyStyle>
         <h1>로그인 페이지</h1>
-        {/* { init === isLoggined ? 
-        <p>{email}</p> : <p>로그인 안됨</p>
-        } */}
+
         <span className="span" onClick={toggleSignup}>◀ 로그인/회원가입 전환 ▶</span> 
         <br /><br />
             <form onSubmit={onSubmit}>
@@ -208,7 +188,7 @@ return (
       );
     }
 
-export default Login;
+export default FirebaseLogin;
 
 
 const MyStyle = styled.div`

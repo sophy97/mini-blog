@@ -90,12 +90,12 @@ const WeatherWrap = styled.div`
     .weatherContentWrap > input {
         width:150px;
         padding:2px;
-        border:1px solid lightgray;
-        border-radius:8px;
+        border:1px solid whitesmoke;
+        border-radius: 8px;
     }
     .weatherContentWrap > input:focus {
         border:none;
-        background-color:lightgray;
+        background-color: whitesmoke;
     }
 `;
 

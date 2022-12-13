@@ -8,7 +8,7 @@ import './App.css';
 import Layout from './pages/Layouts';
 // 전역 사용할 데이터컨텍스트 
 import Home from './pages/Home';
-import Login from './pages/Login';
+import FirebaseLogin from './pages/Login';
 import { DataProvider } from './Context/DataContext';
 import MypageComp from './pages/MypageComp';
 import GamesComp from './pages/GamesComp';
@@ -29,7 +29,7 @@ function App() {
             <Route path='/'  element={<Home />} />
             <Route path='/emolog'  element={<Home2 />} />
             <Route path='/about'  element={<About />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/login' element={<FirebaseLogin />} />
             <Route path='/mypage' element={<MypageComp />} />
             <Route path='/games' element={<GamesComp />} />
           </Route>
