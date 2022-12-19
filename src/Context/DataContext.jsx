@@ -14,7 +14,7 @@ const DataProvider = ({children})=> {
     // children으로 사용할 값들을 useState hook 통해 들고온다
     // 1 유저 정보
     //로그인해서 계속 사용되어야 할 유저정보
-    const [user, setUser] = useState( { name:"sophy", profile:null });
+    const [user, setUser] = useState({ name:"sophy", profile:null });
 
     // 로그인 로그아웃 함수
     const [login, setLogin] = useState(true);

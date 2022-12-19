@@ -5,8 +5,8 @@
 */ 
 
 import { useEffect, useState } from 'react';
-import '../public/Modal.css';
-import Post from '../Redux/Post';
+import '../../src/Modal.css';
+
 
 const Home =()=> {
 
@@ -53,7 +53,6 @@ return (
         <br/><br/>
         <h2>Posts</h2>
         <p>포스트 제목을 클릭해서 내용을 확인하세요</p>
-        <Post />
         <br/>
     {/* 포스팅리스트 출력 박스 - map으로 title 배열 출력*/}
         <div className='Wrapper-posts'>
